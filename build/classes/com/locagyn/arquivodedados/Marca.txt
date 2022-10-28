@@ -1,0 +1,2 @@
+1;FIAT;./src/com/locagyn/logos/fiat-202766.png
+2;KIA;./src/com/locagyn/logos/kia-202823.png
