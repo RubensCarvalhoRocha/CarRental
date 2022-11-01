@@ -4,6 +4,7 @@
  */
 package com.locagyn.visao;
 
+import com.locagyn.ID.GeradorIdentificador;
 import javax.swing.JOptionPane;
 import com.locagyn.modelos.Marca;
 import com.locagyn.persistencia.IMarcaDao;
@@ -33,7 +34,10 @@ public class TelaDasMarcas extends javax.swing.JFrame {
      */
     public TelaDasMarcas() {
         initComponents();
-        
+        MarcaDao txt = new MarcaDao();
+        txt.ChecarTxt();
+        GeradorIdentificador id = new GeradorIdentificador();
+        id.ChecarIdTxt();
         jTextFieldIdentificador.setEnabled(false);
 
         jTextFieldUrl.setEnabled(false);
@@ -364,12 +368,10 @@ public class TelaDasMarcas extends javax.swing.JFrame {
         // TODO add your handling code here:
         try {
             
-            File path = new File(jTextFieldUrl.getText());
-            String logo = "./src/com/locagyn/logos/"+path.getName();
+            
             IMarcaDao incluirMarca = new MarcaDao();
-            MarcaDao txt = new MarcaDao();
-            txt.ChecarTxt();
-            Marca objeto = new Marca(0, jTextFieldDescricao.getText(), logo);
+            
+            Marca objeto = new Marca(0, jTextFieldDescricao.getText(), jTextFieldUrl.getText());
             marcaControle.incluir(objeto);
             jTextFieldDescricao.setText("");
             imprimirDadosNaGrid(incluirMarca.listagem());
@@ -396,7 +398,7 @@ public class TelaDasMarcas extends javax.swing.JFrame {
                     jLabelLogo.getWidth(), jLabelLogo.getHeight(), 1));
             jLabelLogo.setIcon(iconLogo);
         } catch (Exception erro) {
-            JOptionPane.showMessageDialog(this, erro);
+            JOptionPane.showMessageDialog(this, "Selecione a imagem");
         }
 
     }//GEN-LAST:event_jButtonBuscarActionPerformed

@@ -1,1 +1,0 @@
-3;CERATO;./src/com/locagyn/modelosPng/Cerato.png;1

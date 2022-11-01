@@ -50,6 +50,10 @@ public class MarcaControle implements IMarcaControle {
         if("".equals(descricao)){
             throw new Exception("Digite a Descrição");
         }
+        String url = objeto.getUrl();
+        if("".equals(url)){
+            throw new Exception("Selecione a imagem");
+        }
         marcaPersistencia.incluir(objeto);
     }
 

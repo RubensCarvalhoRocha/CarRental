@@ -41,7 +41,8 @@ public class TelaDosModelos extends javax.swing.JFrame {
      */
     public TelaDosModelos() {
         initComponents();
-        
+        ModeloDao txtModelo = new ModeloDao();
+            txtModelo.ChecarTxtModelo();
        
                 
          
@@ -407,7 +408,7 @@ public class TelaDosModelos extends javax.swing.JFrame {
         jLabelLogo.setIcon(iconLogo);
         
         } catch (Exception erro) {
-            JOptionPane.showMessageDialog(this, erro);
+            JOptionPane.showMessageDialog(this, "Selecione a Imagem");
         }
     }//GEN-LAST:event_jButtonBuscarActionPerformed
 
@@ -415,13 +416,10 @@ public class TelaDosModelos extends javax.swing.JFrame {
         // TODO add your handling code here:
         try {
             int idMarca = 0;
-            File path = new File(jTextFieldUrl.getText());
-            String logo = "./src/com/locagyn/modelosPng/"+path.getName();
             
                 MarcaControle objeto1 = new MarcaControle();
-                ModeloDao txtModelo = new ModeloDao();
-            txtModelo.ChecarTxtModelo();
-            Modelo objeto = new Modelo(0, jTextFieldModelo.getText(), logo,objeto1.buscar(idMarca));
+                
+            Modelo objeto = new Modelo(0, jTextFieldModelo.getText(), jTextFieldUrl.getText(),objeto1.buscar(idMarca));
             ArrayList<Marca> lista = obj.listagem();
             for(int i = 0; i < lista.size(); i++){
                 if(jComboBoxMarca.getSelectedItem().equals(lista.get(i).getDescricao())){

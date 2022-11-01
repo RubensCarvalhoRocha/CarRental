@@ -7,10 +7,12 @@ package com.locagyn.ID;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+
 
 /**
  *
@@ -53,4 +55,26 @@ public class GeradorIdentificador {
         bw.close();	
         return id;
     }
+    
+                public void ChecarIdTxt() {
+        
+         try{
+                    //Instanceia ID.txt
+            File idGerado = new File("./src/com/locagyn/arquivodedados/idGerado.txt");
+            //condição que verifica se o ID.txt foi apagado    
+            if (!idGerado.exists()) {
+                    //cria um arquivo ID.txt (vazio)
+                    idGerado.createNewFile();
+                    FileWriter fw = new FileWriter(idGerado);
+                    BufferedWriter bw = new BufferedWriter( fw );
+                    bw.write( "0" );
+                    bw.close();
+                    fw.close();
+                }
+        }
+        catch(IOException ex){
+            
+        }
+    }
+    
 }

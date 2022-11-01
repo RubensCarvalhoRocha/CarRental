@@ -1,1 +1,0 @@
-4;KIA;./src/com/locagyn/logos/kia-202823.png

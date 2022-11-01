@@ -47,6 +47,11 @@ public class ModeloControle implements IModeloControle{
         if("".equals(descricao)){
             throw new Exception("Digite a Descrição");
         }
+        
+        String url = objeto.getUrl();
+        if("".equals(url)){
+            throw new Exception("Selecione a imagem");
+        }
         modeloPersistencia.incluir(objeto);
     }
 
