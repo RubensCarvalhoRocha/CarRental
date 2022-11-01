@@ -33,12 +33,18 @@ public class TelaDasMarcas extends javax.swing.JFrame {
      */
     public TelaDasMarcas() {
         initComponents();
+        
         jTextFieldIdentificador.setEnabled(false);
 
         jTextFieldUrl.setEnabled(false);
         this.setLocationRelativeTo(null);
         try {
+            
             IMarcaDao incluirMarca = new MarcaDao();
+                if(incluirMarca.listagem()==null)throw new Exception("Não tem txt");
+                    
+                
+                
             imprimirDadosNaGrid(incluirMarca.listagem());
         } catch (Exception erro) {
             JOptionPane.showMessageDialog(this, erro.getMessage());
@@ -357,9 +363,12 @@ public class TelaDasMarcas extends javax.swing.JFrame {
     private void jButtonIncluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonIncluirActionPerformed
         // TODO add your handling code here:
         try {
+            
             File path = new File(jTextFieldUrl.getText());
             String logo = "./src/com/locagyn/logos/"+path.getName();
             IMarcaDao incluirMarca = new MarcaDao();
+            MarcaDao txt = new MarcaDao();
+            txt.ChecarTxt();
             Marca objeto = new Marca(0, jTextFieldDescricao.getText(), logo);
             marcaControle.incluir(objeto);
             jTextFieldDescricao.setText("");

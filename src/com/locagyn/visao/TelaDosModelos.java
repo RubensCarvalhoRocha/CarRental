@@ -419,7 +419,8 @@ public class TelaDosModelos extends javax.swing.JFrame {
             String logo = "./src/com/locagyn/modelosPng/"+path.getName();
             
                 MarcaControle objeto1 = new MarcaControle();
-            
+                ModeloDao txtModelo = new ModeloDao();
+            txtModelo.ChecarTxtModelo();
             Modelo objeto = new Modelo(0, jTextFieldModelo.getText(), logo,objeto1.buscar(idMarca));
             ArrayList<Marca> lista = obj.listagem();
             for(int i = 0; i < lista.size(); i++){

@@ -1,1 +1,1 @@
-3;ARGO;./src/com/locagyn/modelosPng/argo.png;1
+3;CERATO;./src/com/locagyn/modelosPng/Cerato.png;1

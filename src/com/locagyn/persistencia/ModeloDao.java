@@ -9,8 +9,10 @@ import com.locagyn.ID.GeradorIdentificador;
 import com.locagyn.modelos.Modelo;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
 
@@ -89,6 +91,22 @@ public class ModeloDao implements IModeloDao {
             return listaDeMarcas;
         } catch (Exception erro) {
             throw erro;
+        }
+    }
+    
+            public void ChecarTxtModelo() {
+        
+         try{
+                    //Instanceia Modelo.txt
+            File Modelo = new File("./src/com/locagyn/arquivodedados/Modelo.txt");
+            //condição que verifica se o Modelo.txt foi apagado    
+            if (!Modelo.exists()) {
+                    //cria um arquivo txt (vazio)
+                    Modelo.createNewFile();
+                }
+        }
+        catch(IOException ex){
+            
         }
     }
 

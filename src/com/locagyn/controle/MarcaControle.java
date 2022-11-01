@@ -7,8 +7,11 @@ package com.locagyn.controle;
 import com.locagyn.modelos.Marca;
 import com.locagyn.persistencia.MarcaDao;
 import com.locagyn.persistencia.IMarcaDao;
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
+
 
 /**
  *
@@ -71,5 +74,5 @@ public class MarcaControle implements IMarcaControle {
     public Marca buscar(int id) throws Exception {
         return marcaPersistencia.buscar(id);
     }
-
+  
 }

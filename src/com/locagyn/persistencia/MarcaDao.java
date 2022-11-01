@@ -1,4 +1,4 @@
-/*
+ /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
@@ -12,6 +12,8 @@ import java.io.FileWriter;
 import java.util.ArrayList;
 import com.locagyn.ID.GeradorIdentificador;
 import java.awt.List;
+import java.io.File;
+import java.io.IOException;
 import java.util.Iterator;
 
 /**
@@ -28,7 +30,8 @@ public class MarcaDao implements IMarcaDao {
 
     @Override
     public void incluir(Marca objeto) throws Exception {
-        try {
+        try {  
+                        
             //cria o arquivo
             FileWriter fw = new FileWriter(nomeDoArquivoNoDisco, true);
             //Criar o buffer do arquivo
@@ -40,8 +43,10 @@ public class MarcaDao implements IMarcaDao {
             //fecha o arquivo
             bw.close();
         } catch (Exception erro) {
+            //Não sei se tiro
             throw erro;
         }
+
     }
 
     @Override
@@ -104,9 +109,25 @@ public class MarcaDao implements IMarcaDao {
                 br.close();
                 return new Marca((Integer.parseInt(vetorString[0])), vetorString[1], vetorString[2]);
             }
-        }
-
+        }    
+            
         return null;
+    }
+    
+        public void ChecarTxt() {
+        
+         try{
+                        //Instanceia Marca.txt
+            File Marca = new File("./src/com/locagyn/arquivodedados/Marca.txt");
+            //condição que verifica se o Marca.txt foi apagado    
+            if (!Marca.exists()) {
+                    //cria um arquivo (vazio)
+                    Marca.createNewFile();
+                }
+        }
+        catch(IOException ex){
+            
+        }
     }
 
 }
