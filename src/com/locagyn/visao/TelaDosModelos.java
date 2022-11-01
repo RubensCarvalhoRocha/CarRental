@@ -30,27 +30,22 @@ import java.util.logging.Logger;
  * @author ruben
  */
 public class TelaDosModelos extends javax.swing.JFrame {
-    
- IModeloControle modeloControle = new ModeloControle();
- 
-        MarcaControle obj = new MarcaControle();
-        
-    
+
+    IModeloControle modeloControle = new ModeloControle();
+
+    MarcaControle obj = new MarcaControle();
+
     /**
      * Creates new form TelaDosModelos
      */
     public TelaDosModelos() {
         initComponents();
         ModeloDao txtModelo = new ModeloDao();
-            txtModelo.ChecarTxtModelo();
-       
-                
-         
-        
-        jTextFieldIdentificador.setEnabled(false );
- try {
-     
-        
+        txtModelo.ChecarTxtModelo();
+
+        jTextFieldIdentificador.setEnabled(false);
+        try {
+
             IModeloDao incluirMarca = new ModeloDao();
             imprimirDadosNaGrid(incluirMarca.listagem());
         } catch (Exception erro) {
@@ -60,15 +55,15 @@ public class TelaDosModelos extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
         MarcaDao objeto = new MarcaDao();
         try {
-            ArrayList<Marca>lista=objeto.listagem();
-            
-            String []listaCombo= new String[lista.size()];
-            for(int pos =0;pos<lista.size();pos++){
-                listaCombo[pos]=lista.get(pos).getDescricao();
+            ArrayList<Marca> lista = objeto.listagem();
+
+            String[] listaCombo = new String[lista.size()];
+            for (int pos = 0; pos < lista.size(); pos++) {
+                listaCombo[pos] = lista.get(pos).getDescricao();
                 jComboBoxMarca.addItem(listaCombo[pos]);
             }
-       } catch (Exception erro) {
-           JOptionPane.showMessageDialog(this, "Marca Não Existe");
+        } catch (Exception erro) {
+            JOptionPane.showMessageDialog(this, "Marca Não Existe");
         }
     }
 
@@ -365,9 +360,7 @@ public class TelaDosModelos extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-    
-    
-    
+
     private void imprimirDadosNaGrid(ArrayList<Modelo> listaDeModelos) {
         try {
             DefaultTableModel model = (DefaultTableModel) jTableModelos.getModel();
@@ -380,7 +373,7 @@ public class TelaDosModelos extends javax.swing.JFrame {
                 saida[0] = aux.getId() + "";
                 saida[1] = aux.getDescricao();
                 saida[2] = aux.getUrl();
-                saida[3]=obj.buscar(aux.getMarca().getId()).getUrl();
+                saida[3] = obj.buscar(aux.getMarca().getId()).getUrl();
                 //Incluir nova linha na Tabela
                 model.addRow(saida);
             }
@@ -389,26 +382,30 @@ public class TelaDosModelos extends javax.swing.JFrame {
         }
 
     }
-  
-    
+
+
     private void jButtonBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBuscarActionPerformed
         // TODO add your handling code here:
         try {
             JFileChooser fc = new JFileChooser();
-            File workingDirectory = new File("./src/com/locagyn/modelosPng");
-            fc.setCurrentDirectory(workingDirectory);
+            File logo = new File("./src/com/locagyn/modelosPng");
+            fc.setCurrentDirectory(logo);
             fc.setFileSelectionMode(JFileChooser.FILES_ONLY);
             fc.showOpenDialog(this);
             File arquivo = fc.getSelectedFile();
             String nomeDoArquivo = arquivo.getPath();
-            jTextFieldUrl.setText(nomeDoArquivo);
+            String nome = arquivo.getName();
+            String url = logo.getPath();
+            url += "/" + nome;
+            System.out.println(url);
+            jTextFieldUrl.setText(url);
             ImageIcon iconLogo = new ImageIcon(nomeDoArquivo);
-            iconLogo.setImage(iconLogo.getImage().getScaledInstance(
-             jLabelLogo.getWidth(), jLabelLogo.getHeight(), 1));
-        jLabelLogo.setIcon(iconLogo);
-        
+            iconLogo.setImage(iconLogo.getImage().getScaledInstance(jLabelLogo.getWidth(),
+            jLabelLogo.getHeight(), 1));
+            jLabelLogo.setIcon(iconLogo);
+
         } catch (Exception erro) {
-            JOptionPane.showMessageDialog(this, "Selecione a Imagem");
+            JOptionPane.showMessageDialog(this, erro);
         }
     }//GEN-LAST:event_jButtonBuscarActionPerformed
 
@@ -416,13 +413,13 @@ public class TelaDosModelos extends javax.swing.JFrame {
         // TODO add your handling code here:
         try {
             int idMarca = 0;
-            
-                MarcaControle objeto1 = new MarcaControle();
-                
-            Modelo objeto = new Modelo(0, jTextFieldModelo.getText(), jTextFieldUrl.getText(),objeto1.buscar(idMarca));
+
+            MarcaControle objeto1 = new MarcaControle();
+
+            Modelo objeto = new Modelo(0, jTextFieldModelo.getText(), jTextFieldUrl.getText(), objeto1.buscar(idMarca));
             ArrayList<Marca> lista = obj.listagem();
-            for(int i = 0; i < lista.size(); i++){
-                if(jComboBoxMarca.getSelectedItem().equals(lista.get(i).getDescricao())){
+            for (int i = 0; i < lista.size(); i++) {
+                if (jComboBoxMarca.getSelectedItem().equals(lista.get(i).getDescricao())) {
                     objeto.setMarca(lista.get(i));
                 }
             }
@@ -439,21 +436,20 @@ public class TelaDosModelos extends javax.swing.JFrame {
         // TODO add your handling code here:
 
         try {
-           int idMarca = 0;
-           MarcaControle objeto1 = new MarcaControle();
-            
-              Modelo objeto = new Modelo(Integer.parseInt(jTextFieldIdentificador.getText()), jTextFieldModelo.getText(), jTextFieldUrl.getText(),objeto1.buscar(idMarca));
+            int idMarca = 0;
+            MarcaControle objeto1 = new MarcaControle();
+
+            Modelo objeto = new Modelo(Integer.parseInt(jTextFieldIdentificador.getText()), jTextFieldModelo.getText(), jTextFieldUrl.getText(), objeto1.buscar(idMarca));
             ArrayList<Marca> lista = obj.listagem();
-            for(int i = 0; i < lista.size(); i++){
-                if(jComboBoxMarca.getSelectedItem().equals(lista.get(i).getDescricao())){
+            for (int i = 0; i < lista.size(); i++) {
+                if (jComboBoxMarca.getSelectedItem().equals(lista.get(i).getDescricao())) {
                     objeto.setMarca(lista.get(i));
                 }
             }
             modeloControle.alterar(objeto);
             jTextFieldModelo.setText("");
             imprimirDadosNaGrid(modeloControle.listagem());
-         
-            
+
         } catch (Exception ex) {
 
         }
@@ -477,23 +473,22 @@ public class TelaDosModelos extends javax.swing.JFrame {
     }//GEN-LAST:event_jTableModelosMouseClicked
 
     private void jComboBoxMarcaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxMarcaActionPerformed
-     try {
-         // TODO add your handling code here:
-         IMarcaDao objeto = new MarcaDao();
-         ArrayList<Marca> lista = objeto.listagem();
-          for(int i = 0;i<lista.size();i++){
-              if(jComboBoxMarca.getSelectedItem().equals(lista.get(i).getDescricao())){
-                  ImageIcon iconlogo = new ImageIcon(lista.get(i).getUrl());
-                   iconlogo.setImage(iconlogo.getImage().getScaledInstance(jLabelLogoMarca.getWidth(), jLabelLogoMarca.getHeight(), 1));
-                  jLabelLogoMarca.setIcon(iconlogo);
-              }
-          }
-         
-                 
-                 } catch (Exception ex) {
-         Logger.getLogger(TelaDosModelos.class.getName()).log(Level.SEVERE, null, ex);
-     }
-        
+        try {
+            // TODO add your handling code here:
+            IMarcaDao objeto = new MarcaDao();
+            ArrayList<Marca> lista = objeto.listagem();
+            for (int i = 0; i < lista.size(); i++) {
+                if (jComboBoxMarca.getSelectedItem().equals(lista.get(i).getDescricao())) {
+                    ImageIcon iconlogo = new ImageIcon(lista.get(i).getUrl());
+                    iconlogo.setImage(iconlogo.getImage().getScaledInstance(jLabelLogoMarca.getWidth(), jLabelLogoMarca.getHeight(), 1));
+                    jLabelLogoMarca.setIcon(iconlogo);
+                }
+            }
+
+        } catch (Exception ex) {
+            Logger.getLogger(TelaDosModelos.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
     }//GEN-LAST:event_jComboBoxMarcaActionPerformed
 
     private void jTextFieldUrlActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldUrlActionPerformed
@@ -509,13 +504,11 @@ public class TelaDosModelos extends javax.swing.JFrame {
         TelaHome frame = new TelaHome();
         frame.setVisible(true);
         this.setVisible(false);
-        
+
     }//GEN-LAST:event_jButtonHomeActionPerformed
 
     private void jTextFieldModeloKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldModeloKeyTyped
         char e = evt.getKeyChar();
-
-       
 
         if (Character.isLowerCase(e)) {
             evt.setKeyChar(Character.toUpperCase(e));

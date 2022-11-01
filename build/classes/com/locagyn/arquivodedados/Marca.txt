@@ -1,0 +1,2 @@
+1;TESTEE;.\src\com\locagyn\logos/nissan-202859.png
+3;HYUNDAI;.\src\com\locagyn\logos/hyundai-202804.png

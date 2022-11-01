@@ -385,20 +385,23 @@ public class TelaDasMarcas extends javax.swing.JFrame {
         // TODO add your handling code here:
         try {
             JFileChooser fc = new JFileChooser();
-            File workingDirectory = new File("./src/com/locagyn/logos");
-            fc.setCurrentDirectory(workingDirectory);
-
+            File logo = new File("./src/com/locagyn/logos");
+            fc.setCurrentDirectory(logo);
             fc.setFileSelectionMode(JFileChooser.FILES_ONLY);
             fc.showOpenDialog(this);
             File arquivo = fc.getSelectedFile();
             String nomeDoArquivo = arquivo.getPath();
-            jTextFieldUrl.setText(nomeDoArquivo);
+            String nome = arquivo.getName();
+            String url = logo.getPath();
+            url += "/" + nome;
+            System.out.println(url);
+            jTextFieldUrl.setText(url);
             ImageIcon iconLogo = new ImageIcon(nomeDoArquivo);
-            iconLogo.setImage(iconLogo.getImage().getScaledInstance(
-                    jLabelLogo.getWidth(), jLabelLogo.getHeight(), 1));
+            iconLogo.setImage(iconLogo.getImage().getScaledInstance(jLabelLogo.getWidth(), jLabelLogo.getHeight(), 1));
             jLabelLogo.setIcon(iconLogo);
+
         } catch (Exception erro) {
-            JOptionPane.showMessageDialog(this, "Selecione a imagem");
+            JOptionPane.showMessageDialog(this, erro);
         }
 
     }//GEN-LAST:event_jButtonBuscarActionPerformed
