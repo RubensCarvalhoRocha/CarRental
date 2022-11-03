@@ -53,7 +53,7 @@ public class TelaHome extends javax.swing.JFrame {
 
         jLabel2.setBackground(new java.awt.Color(0, 0, 0));
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/locagyn/gifseimagens/Post para instagram oportunidade venda de carros moderno vermelho (1).gif"))); // NOI18N
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1080, 1080));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1060, 730));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -71,8 +71,6 @@ public class TelaHome extends javax.swing.JFrame {
         TelaDosModelos frame = new TelaDosModelos();
         frame.setVisible(true);
         this.setVisible(false);
-        
-        
     }//GEN-LAST:event_jButtonModelosActionPerformed
 
     /**

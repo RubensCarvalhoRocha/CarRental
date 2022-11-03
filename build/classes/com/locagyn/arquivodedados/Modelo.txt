@@ -1,1 +1,4 @@
-2;TESTEE;.\src\com\locagyn\modelosPng/civic.png;3
+2;2008;.\src\com\locagyn\modelosPng/2008.png;1
+3;208;.\src\com\locagyn\modelosPng/208.png;1
+5;GOL;.\src\com\locagyn\modelosPng/gol.png;4
+6;TCROSS;.\src\com\locagyn\modelosPng/tcross.png;4
