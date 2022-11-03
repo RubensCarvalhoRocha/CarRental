@@ -19,6 +19,8 @@ import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import com.locagyn.imagensnatela.JTableRenderer;
 import com.locagyn.controle.MarcaControle;
+import java.awt.event.KeyEvent;
+import com.locagyn.LimitarCaracteres.LimitaCaracteres;
 
 
 /**
@@ -34,6 +36,7 @@ public class TelaDasMarcas extends javax.swing.JFrame {
      */
     public TelaDasMarcas() {
         initComponents();
+        jTextFieldDescricao.setDocument(new LimitaCaracteres(10, LimitaCaracteres.TipoEntrada.NOME));
         MarcaDao txt = new MarcaDao();
         txt.ChecarTxt();
         GeradorIdentificador id = new GeradorIdentificador();
@@ -440,8 +443,11 @@ public class TelaDasMarcas extends javax.swing.JFrame {
 
     }//GEN-LAST:event_jButtonAlterarActionPerformed
 
+     
+   
     private void jTextFieldDescricaoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldDescricaoKeyTyped
         // TODO add your handling code here:
+       
         char e = evt.getKeyChar();
 
         if (!Character.isLetter(e)) {
