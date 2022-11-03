@@ -405,7 +405,7 @@ public class TelaDosModelos extends javax.swing.JFrame {
             jLabelLogo.setIcon(iconLogo);
 
         } catch (Exception erro) {
-            JOptionPane.showMessageDialog(this, erro);
+            JOptionPane.showMessageDialog(this, "Selecione a Imagem");
         }
     }//GEN-LAST:event_jButtonBuscarActionPerformed
 
