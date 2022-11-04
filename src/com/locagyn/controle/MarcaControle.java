@@ -78,5 +78,20 @@ public class MarcaControle implements IMarcaControle {
     public Marca buscar(int id) throws Exception {
         return marcaPersistencia.buscar(id);
     }
+    public void ChecarTxt() {
+        
+         try{
+                        //Instanceia Marca.txt
+            File Marca = new File("./src/com/locagyn/arquivodedados/Marca.txt");
+            //condição que verifica se o Marca.txt foi apagado    
+            if (!Marca.exists()) {
+                    //cria um arquivo (vazio)
+                    Marca.createNewFile();
+                }
+        }
+        catch(IOException ex){
+            
+        }
+    }
   
 }

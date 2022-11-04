@@ -22,7 +22,6 @@ import com.locagyn.persistencia.IMarcaDao;
 import com.locagyn.persistencia.IModeloDao;
 import com.locagyn.persistencia.MarcaDao;
 import com.locagyn.persistencia.ModeloDao;
-import com.sun.source.tree.TryTree;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -42,20 +41,20 @@ public class TelaDosModelos extends javax.swing.JFrame {
     public TelaDosModelos() {
         initComponents();
         jTextFieldModelo.setDocument(new LimitaCaracteres(10, LimitaCaracteres.TipoEntrada.NOME));
-        ModeloDao txtModelo = new ModeloDao();
+        ModeloControle txtModelo = new ModeloControle();
         txtModelo.ChecarTxtModelo();
 
         jTextFieldIdentificador.setEnabled(false);
         try {
 
-            IModeloDao incluirMarca = new ModeloDao();
+            IModeloControle incluirMarca = new ModeloControle();
             imprimirDadosNaGrid(incluirMarca.listagem());
         } catch (Exception erro) {
             JOptionPane.showMessageDialog(this, erro.getMessage());
         }
         jTextFieldUrl.setEnabled(false);
         this.setLocationRelativeTo(null);
-        MarcaDao objeto = new MarcaDao();
+        MarcaControle objeto = new MarcaControle();
         try {
             ArrayList<Marca> lista = objeto.listagem();
 
@@ -478,8 +477,7 @@ public class TelaDosModelos extends javax.swing.JFrame {
     private void jComboBoxMarcaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxMarcaActionPerformed
         try {
             // TODO add your handling code here:
-            IMarcaDao objeto = new MarcaDao();
-            ArrayList<Marca> lista = objeto.listagem();
+            ArrayList<Marca> lista = obj.listagem();
             for (int i = 0; i < lista.size(); i++) {
                 if (jComboBoxMarca.getSelectedItem().equals(lista.get(i).getDescricao())) {
                     ImageIcon iconlogo = new ImageIcon(lista.get(i).getUrl());

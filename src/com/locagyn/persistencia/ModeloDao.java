@@ -94,20 +94,6 @@ public class ModeloDao implements IModeloDao {
         }
     }
     
-            public void ChecarTxtModelo() {
-        
-         try{
-                    //Instanceia Modelo.txt
-            File Modelo = new File("./src/com/locagyn/arquivodedados/Modelo.txt");
-            //condição que verifica se o Modelo.txt foi apagado    
-            if (!Modelo.exists()) {
-                    //cria um arquivo txt (vazio)
-                    Modelo.createNewFile();
-                }
-        }
-        catch(IOException ex){
             
-        }
-    }
 
 }

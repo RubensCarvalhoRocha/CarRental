@@ -7,6 +7,8 @@ package com.locagyn.controle;
 import com.locagyn.modelos.Modelo;
 import com.locagyn.persistencia.IModeloDao;
 import com.locagyn.persistencia.ModeloDao;
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
 
@@ -70,6 +72,21 @@ public class ModeloControle implements IModeloControle{
     @Override
     public ArrayList<Modelo> listagem() throws Exception {
        return modeloPersistencia.listagem();
+    }
+    public void ChecarTxtModelo() {
+        
+         try{
+                    //Instanceia Modelo.txt
+            File Modelo = new File("./src/com/locagyn/arquivodedados/Modelo.txt");
+            //condição que verifica se o Modelo.txt foi apagado    
+            if (!Modelo.exists()) {
+                    //cria um arquivo txt (vazio)
+                    Modelo.createNewFile();
+                }
+        }
+        catch(IOException ex){
+            
+        }
     }
     
 }

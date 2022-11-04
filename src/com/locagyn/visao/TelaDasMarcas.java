@@ -7,21 +7,16 @@ package com.locagyn.visao;
 import com.locagyn.ID.GeradorIdentificador;
 import javax.swing.JOptionPane;
 import com.locagyn.modelos.Marca;
-import com.locagyn.persistencia.IMarcaDao;
-import com.locagyn.persistencia.MarcaDao;
 import java.util.ArrayList;
 import java.util.Iterator;
 import javax.swing.table.DefaultTableModel;
-
 import com.locagyn.controle.IMarcaControle;
 import java.io.File;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import com.locagyn.imagensnatela.JTableRenderer;
 import com.locagyn.controle.MarcaControle;
-import java.awt.event.KeyEvent;
 import com.locagyn.LimitarCaracteres.LimitaCaracteres;
-
 
 /**
  *
@@ -37,7 +32,7 @@ public class TelaDasMarcas extends javax.swing.JFrame {
     public TelaDasMarcas() {
         initComponents();
         jTextFieldDescricao.setDocument(new LimitaCaracteres(10, LimitaCaracteres.TipoEntrada.NOME));
-        MarcaDao txt = new MarcaDao();
+        MarcaControle txt = new MarcaControle(); // pog
         txt.ChecarTxt();
         GeradorIdentificador id = new GeradorIdentificador();
         id.ChecarIdTxt();
@@ -47,12 +42,11 @@ public class TelaDasMarcas extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
         try {
             
-            IMarcaDao incluirMarca = new MarcaDao();
-                if(incluirMarca.listagem()==null)throw new Exception("Não tem txt");
+                
                     
                 
                 
-            imprimirDadosNaGrid(incluirMarca.listagem());
+            imprimirDadosNaGrid(marcaControle.listagem());
         } catch (Exception erro) {
             JOptionPane.showMessageDialog(this, erro.getMessage());
         }
@@ -369,7 +363,7 @@ public class TelaDasMarcas extends javax.swing.JFrame {
         try {
             
             
-            IMarcaDao incluirMarca = new MarcaDao();
+            IMarcaControle incluirMarca = new MarcaControle(); // pog
             
             Marca objeto = new Marca(0, jTextFieldDescricao.getText(), jTextFieldUrl.getText());
             marcaControle.incluir(objeto);
@@ -429,7 +423,7 @@ public class TelaDasMarcas extends javax.swing.JFrame {
 
         try {
 
-            IMarcaDao incluirMarca = new MarcaDao();
+            IMarcaControle incluirMarca = new MarcaControle(); // pog
             Marca objeto = new Marca(Integer.parseInt(jTextFieldIdentificador.getText()), jTextFieldDescricao.getText(), jTextFieldUrl.getText());
             marcaControle.alterar(objeto);
             imprimirDadosNaGrid(incluirMarca.listagem());

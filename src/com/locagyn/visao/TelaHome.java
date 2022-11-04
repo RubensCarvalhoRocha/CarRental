@@ -34,7 +34,7 @@ public class TelaHome extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButtonMarcas.setText("Marcas ");
+        jButtonMarcas.setText("Cadrastrar Marcas");
         jButtonMarcas.setBorder(null);
         jButtonMarcas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -43,7 +43,7 @@ public class TelaHome extends javax.swing.JFrame {
         });
         getContentPane().add(jButtonMarcas, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 570, 210, 40));
 
-        jButtonModelos.setText("Modelo");
+        jButtonModelos.setText("Cadrastrar Modelos");
         jButtonModelos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonModelosActionPerformed(evt);

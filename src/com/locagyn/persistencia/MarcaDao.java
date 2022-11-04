@@ -42,7 +42,6 @@ public class MarcaDao implements IMarcaDao {
             //fecha o arquivo
             bw.close();
         } catch (Exception erro) {
-            //Não sei se tiro
             throw erro;
         }
 
@@ -113,20 +112,6 @@ public class MarcaDao implements IMarcaDao {
         return null;
     }
     
-        public void ChecarTxt() {
         
-         try{
-                        //Instanceia Marca.txt
-            File Marca = new File("./src/com/locagyn/arquivodedados/Marca.txt");
-            //condição que verifica se o Marca.txt foi apagado    
-            if (!Marca.exists()) {
-                    //cria um arquivo (vazio)
-                    Marca.createNewFile();
-                }
-        }
-        catch(IOException ex){
-            
-        }
-    }
 
 }
