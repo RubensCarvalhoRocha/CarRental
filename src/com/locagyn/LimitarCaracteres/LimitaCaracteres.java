@@ -31,7 +31,7 @@ public class LimitaCaracteres extends PlainDocument{
             return;
         }
         int totalCarac = getLength() + string.length();
-        //filtro de caracteres
+        //FILTRO DE CARACTERES
         String regex = "";
         switch(tpEntrada){
             case NUMEROINTEIRO: regex = "^[0-9]"; break;
