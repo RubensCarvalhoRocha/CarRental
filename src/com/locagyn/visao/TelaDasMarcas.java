@@ -132,7 +132,7 @@ public class TelaDasMarcas extends javax.swing.JFrame {
             jTableMarcas.getColumnModel().getColumn(3).setCellRenderer(new JTableRenderer());
         }
 
-        jButtonBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/locagyn/icones/lupa.png"))); // NOI18N
+        jButtonBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/locagyn/icones/search.png"))); // NOI18N
         jButtonBuscar.setText("BUSCAR");
         jButtonBuscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -140,7 +140,7 @@ public class TelaDasMarcas extends javax.swing.JFrame {
             }
         });
 
-        jButtonIncluir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/locagyn/icones/incluir.png"))); // NOI18N
+        jButtonIncluir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/locagyn/icones/add.png"))); // NOI18N
         jButtonIncluir.setText("INCLUIR");
         jButtonIncluir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -148,7 +148,7 @@ public class TelaDasMarcas extends javax.swing.JFrame {
             }
         });
 
-        jButtonAlterar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/locagyn/icones/exchange (1).png"))); // NOI18N
+        jButtonAlterar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/locagyn/icones/exchange1.png"))); // NOI18N
         jButtonAlterar.setText("ALTERAR");
         jButtonAlterar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -171,7 +171,7 @@ public class TelaDasMarcas extends javax.swing.JFrame {
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap(11, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButtonBuscar)
                     .addComponent(jButtonIncluir)
@@ -206,7 +206,7 @@ public class TelaDasMarcas extends javax.swing.JFrame {
         });
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        jLabel2.setText("IDENTIFICADOR");
+        jLabel2.setText("ID");
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jLabel4.setText("URL");
@@ -250,7 +250,7 @@ public class TelaDasMarcas extends javax.swing.JFrame {
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jTextFieldIdentificador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jTextFieldIdentificador, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel2))
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addContainerGap()
@@ -258,13 +258,13 @@ public class TelaDasMarcas extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTextFieldDescricao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel3))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTextFieldUrl, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel4)))
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel3)
+                            .addComponent(jTextFieldDescricao, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel4)
+                            .addComponent(jTextFieldUrl, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(jLabelLogo, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );

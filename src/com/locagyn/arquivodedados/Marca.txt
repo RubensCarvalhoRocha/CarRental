@@ -2,3 +2,4 @@
 4;VOLKSWAGEN;.\src\com\locagyn\logos/Volkswagen_logo_2019.svg.png
 7;CHEVROLET;.\src\com\locagyn\logos/chevrolet.png
 8;KIA;.\src\com\locagyn\logos/kia-202823.png
+10;HYUNDAI;.\src\com\locagyn\logos/hyundai-202804.png
