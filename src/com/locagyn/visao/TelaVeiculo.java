@@ -11,7 +11,7 @@ package com.locagyn.visao;
 public class TelaVeiculo extends javax.swing.JFrame {
 
     /**
-     * Creates new form TelaVeiculo
+     * Creates new form Tela2
      */
     public TelaVeiculo() {
         initComponents();
@@ -26,11 +26,6 @@ public class TelaVeiculo extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel3 = new javax.swing.JPanel();
-        jButtonBuscar = new javax.swing.JButton();
-        jButtonIncluir = new javax.swing.JButton();
-        jButtonAlterar = new javax.swing.JButton();
-        jButtonHome = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
@@ -55,62 +50,13 @@ public class TelaVeiculo extends javax.swing.JFrame {
         jLabelTipoVeiculo = new javax.swing.JLabel();
         jTextFieldQuilometragem = new javax.swing.JTextField();
         jTextFieldVeiculo = new javax.swing.JTextField();
+        jPanel3 = new javax.swing.JPanel();
+        jButtonBuscar = new javax.swing.JButton();
+        jButtonIncluir = new javax.swing.JButton();
+        jButtonAlterar = new javax.swing.JButton();
+        jButtonHome = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        jButtonBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/locagyn/icones/search.png"))); // NOI18N
-        jButtonBuscar.setText("BUSCAR");
-        jButtonBuscar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonBuscarActionPerformed(evt);
-            }
-        });
-
-        jButtonIncluir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/locagyn/icones/add.png"))); // NOI18N
-        jButtonIncluir.setText("INCLUIR");
-        jButtonIncluir.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonIncluirActionPerformed(evt);
-            }
-        });
-
-        jButtonAlterar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/locagyn/icones/exchange1.png"))); // NOI18N
-        jButtonAlterar.setText("ALTERAR");
-        jButtonAlterar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonAlterarActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addComponent(jButtonBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButtonIncluir, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(12, 12, 12)
-                .addComponent(jButtonAlterar, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap(11, Short.MAX_VALUE)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButtonBuscar)
-                    .addComponent(jButtonIncluir)
-                    .addComponent(jButtonAlterar))
-                .addContainerGap())
-        );
-
-        jButtonHome.setText("HOME");
-        jButtonHome.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonHomeActionPerformed(evt);
-            }
-        });
 
         jPanel1.setBackground(new java.awt.Color(51, 51, 51));
 
@@ -327,8 +273,8 @@ public class TelaVeiculo extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jTextFieldAnoModelo, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanelRenavamLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabelCombustivel)
+                .addGroup(jPanelRenavamLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabelCombustivel, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jTextFieldCombustivel, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanelRenavamLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -341,13 +287,67 @@ public class TelaVeiculo extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        jButtonBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/locagyn/icones/search.png"))); // NOI18N
+        jButtonBuscar.setText("BUSCAR");
+        jButtonBuscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonBuscarActionPerformed(evt);
+            }
+        });
+
+        jButtonIncluir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/locagyn/icones/add.png"))); // NOI18N
+        jButtonIncluir.setText("INCLUIR");
+        jButtonIncluir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonIncluirActionPerformed(evt);
+            }
+        });
+
+        jButtonAlterar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/locagyn/icones/exchange1.png"))); // NOI18N
+        jButtonAlterar.setText("ALTERAR");
+        jButtonAlterar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonAlterarActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addComponent(jButtonBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jButtonIncluir, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(12, 12, 12)
+                .addComponent(jButtonAlterar, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addContainerGap(11, Short.MAX_VALUE)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButtonBuscar)
+                    .addComponent(jButtonIncluir)
+                    .addComponent(jButtonAlterar))
+                .addContainerGap())
+        );
+
+        jButtonHome.setText("HOME");
+        jButtonHome.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonHomeActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 69, Short.MAX_VALUE)
+                .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 812, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(80, 80, 80))
             .addGroup(layout.createSequentialGroup()
@@ -380,6 +380,22 @@ public class TelaVeiculo extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jTableMarcasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTableMarcasMouseClicked
+        // TODO add your handling code here:
+        try {
+            this.jTextFieldPlaca.setText(jTableMarcas.getValueAt(jTableMarcas.getSelectedRow(), 0).toString());
+            this.jTextFieldRenavam.setText(jTableMarcas.getValueAt(jTableMarcas.getSelectedRow(), 1).toString());
+            this.jTextFieldPrecoVenda.setText(jTableMarcas.getValueAt(jTableMarcas.getSelectedRow(), 2).toString());
+            String nomeArquivo = (String) this.jTableMarcas.getValueAt(jTableMarcas.getSelectedRow(), 2);
+            jTextFieldPrecoVenda.setText(nomeArquivo);
+            ImageIcon iconLogo = new ImageIcon(nomeArquivo);
+            iconLogo.setImage(iconLogo.getImage().getScaledInstance(jLabelLogo.getWidth(), jLabelLogo.getHeight(), 1));
+            jLabelLogo.setIcon(iconLogo);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, e);
+        }
+    }//GEN-LAST:event_jTableMarcasMouseClicked
 
     private void jTextFieldPlacaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldPlacaActionPerformed
         // TODO add your handling code here:
@@ -422,6 +438,14 @@ public class TelaVeiculo extends javax.swing.JFrame {
     private void jTextFieldAnoModeloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldAnoModeloActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextFieldAnoModeloActionPerformed
+
+    private void jTextFieldQuilometragemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldQuilometragemActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldQuilometragemActionPerformed
+
+    private void jTextFieldVeiculoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldVeiculoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldVeiculoActionPerformed
 
     private void jButtonBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBuscarActionPerformed
         // TODO add your handling code here:
@@ -485,30 +509,6 @@ public class TelaVeiculo extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_jButtonHomeActionPerformed
 
-    private void jTableMarcasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTableMarcasMouseClicked
-        // TODO add your handling code here:
-        try {
-            this.jTextFieldPlaca.setText(jTableMarcas.getValueAt(jTableMarcas.getSelectedRow(), 0).toString());
-            this.jTextFieldRenavam.setText(jTableMarcas.getValueAt(jTableMarcas.getSelectedRow(), 1).toString());
-            this.jTextFieldPrecoVenda.setText(jTableMarcas.getValueAt(jTableMarcas.getSelectedRow(), 2).toString());
-            String nomeArquivo = (String) this.jTableMarcas.getValueAt(jTableMarcas.getSelectedRow(), 2);
-            jTextFieldPrecoVenda.setText(nomeArquivo);
-            ImageIcon iconLogo = new ImageIcon(nomeArquivo);
-            iconLogo.setImage(iconLogo.getImage().getScaledInstance(jLabelLogo.getWidth(), jLabelLogo.getHeight(), 1));
-            jLabelLogo.setIcon(iconLogo);
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(this, e);
-        }
-    }//GEN-LAST:event_jTableMarcasMouseClicked
-
-    private void jTextFieldQuilometragemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldQuilometragemActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldQuilometragemActionPerformed
-
-    private void jTextFieldVeiculoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldVeiculoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldVeiculoActionPerformed
-
     /**
      * @param args the command line arguments
      */
@@ -534,6 +534,7 @@ public class TelaVeiculo extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(TelaVeiculo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
