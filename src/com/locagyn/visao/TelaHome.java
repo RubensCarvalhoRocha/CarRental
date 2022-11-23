@@ -30,6 +30,7 @@ public class TelaHome extends javax.swing.JFrame {
         jButtonMarcas = new javax.swing.JButton();
         jButtonModelos = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
+        jButtonMarcas1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -55,6 +56,15 @@ public class TelaHome extends javax.swing.JFrame {
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/locagyn/gifseimagens/Post para instagram oportunidade venda de carros moderno vermelho (1).gif"))); // NOI18N
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1060, 730));
 
+        jButtonMarcas1.setText("Cadrastrar Marcas");
+        jButtonMarcas1.setBorder(null);
+        jButtonMarcas1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonMarcas1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButtonMarcas1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 570, 210, 40));
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -72,6 +82,10 @@ public class TelaHome extends javax.swing.JFrame {
         frame.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jButtonModelosActionPerformed
+
+    private void jButtonMarcas1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonMarcas1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonMarcas1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -110,6 +124,7 @@ public class TelaHome extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonMarcas;
+    private javax.swing.JButton jButtonMarcas1;
     private javax.swing.JButton jButtonModelos;
     private javax.swing.JLabel jLabel2;
     // End of variables declaration//GEN-END:variables
