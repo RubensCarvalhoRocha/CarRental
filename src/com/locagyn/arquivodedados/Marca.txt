@@ -1,5 +1,3 @@
-1;PEUGEOT;.\src\com\locagyn\logos/Peugeot.png
-4;VOLKSWAGEN;.\src\com\locagyn\logos/Volkswagen_logo_2019.svg.png
-7;CHEVROLET;.\src\com\locagyn\logos/chevrolet.png
-8;KIA;.\src\com\locagyn\logos/kia-202823.png
-10;HYUNDAI;.\src\com\locagyn\logos/hyundai-202804.png
+1;CHEVA;.\src\com\locagyn\logos/chevrolet.png
+2;TOIOTAA;.\src\com\locagyn\logos/toyota-202914.png
+3;TOYOTA;.\src\com\locagyn\logos/toyota-202914.png

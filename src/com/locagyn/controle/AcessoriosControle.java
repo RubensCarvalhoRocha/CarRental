@@ -47,11 +47,26 @@ public class AcessoriosControle implements IAcessoriosControle{
         if("".equals(descricao)){
             throw new Exception("Digite a Descrição");
         }
+        String valor = objeto.getValor();
+        if("".equals(valor)){
+            throw new Exception("Digite o valor da locação");
+        }
         acessoriosPersistencia.incluir(objeto);
     }
 
     @Override
     public void alterar(Acessorios objeto) throws Exception {
+        if (buscarAcessorios(objeto.getDescricao())) {
+            throw new Exception("Acessorios já foi cadastrada");
+        }
+        String descricao = objeto.getDescricao();
+        if("".equals(descricao)){
+            throw new Exception("Digite a Descrição");
+        }
+        String valor = objeto.getValor();
+        if("".equals(valor)){
+            throw new Exception("Digite o valor da locação");
+        }
         acessoriosPersistencia.alterar(objeto);
     }
 

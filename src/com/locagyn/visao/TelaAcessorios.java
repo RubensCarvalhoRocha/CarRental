@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
-
+import com.locagyn.LimitarCaracteres.LimitaCaracteres;
 /**
  *
  * @author ruben
@@ -32,6 +32,8 @@ public class TelaAcessorios extends javax.swing.JFrame {
         } catch (Exception erro) {
             JOptionPane.showMessageDialog(this, erro.getMessage());
         }
+         jTextFieldDescricao.setDocument(new LimitaCaracteres(10, LimitaCaracteres.TipoEntrada.NOME));
+         jTextFieldValorDaLocacao.setDocument(new LimitaCaracteres(10, LimitaCaracteres.TipoEntrada.NUMERODECIMAL));
     }
 
     /**
@@ -52,11 +54,11 @@ public class TelaAcessorios extends javax.swing.JFrame {
         jPanel4 = new javax.swing.JPanel();
         jPanelDescricao = new javax.swing.JPanel();
         jTextFieldIdentificador = new javax.swing.JTextField();
-        jTextFieldDescricao = new javax.swing.JTextField();
         jTextFieldValorDaLocacao = new javax.swing.JTextField();
         jLabelId = new javax.swing.JLabel();
         jLabelValorLocacao = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
+        jTextFieldDescricao = new javax.swing.JTextField();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTableAcessorios = new javax.swing.JTable();
 
@@ -134,18 +136,6 @@ public class TelaAcessorios extends javax.swing.JFrame {
             }
         });
 
-        jTextFieldDescricao.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jTextFieldDescricao.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldDescricaoActionPerformed(evt);
-            }
-        });
-        jTextFieldDescricao.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                jTextFieldDescricaoKeyTyped(evt);
-            }
-        });
-
         jTextFieldValorDaLocacao.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jTextFieldValorDaLocacao.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -162,26 +152,38 @@ public class TelaAcessorios extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jLabel3.setText("DESCRICAO");
 
+        jTextFieldDescricao.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldDescricaoActionPerformed(evt);
+            }
+        });
+        jTextFieldDescricao.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jTextFieldDescricaoKeyTyped(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanelDescricaoLayout = new javax.swing.GroupLayout(jPanelDescricao);
         jPanelDescricao.setLayout(jPanelDescricaoLayout);
         jPanelDescricaoLayout.setHorizontalGroup(
             jPanelDescricaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelDescricaoLayout.createSequentialGroup()
-                .addGap(18, 18, 18)
-                .addGroup(jPanelDescricaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabelId, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabelValorLocacao))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanelDescricaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanelDescricaoLayout.createSequentialGroup()
+                        .addGap(18, 18, 18)
                         .addGroup(jPanelDescricaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextFieldValorDaLocacao, javax.swing.GroupLayout.PREFERRED_SIZE, 388, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextFieldDescricao, javax.swing.GroupLayout.PREFERRED_SIZE, 344, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(104, 303, Short.MAX_VALUE))
-                    .addGroup(jPanelDescricaoLayout.createSequentialGroup()
-                        .addComponent(jTextFieldIdentificador, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(114, 575, Short.MAX_VALUE))))
+                            .addComponent(jLabel3)
+                            .addComponent(jLabelId, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(60, 60, 60))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelDescricaoLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabelValorLocacao)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
+                .addGroup(jPanelDescricaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jTextFieldValorDaLocacao)
+                    .addComponent(jTextFieldIdentificador, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextFieldDescricao, javax.swing.GroupLayout.DEFAULT_SIZE, 388, Short.MAX_VALUE))
+                .addGap(104, 293, Short.MAX_VALUE))
         );
         jPanelDescricaoLayout.setVerticalGroup(
             jPanelDescricaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -191,13 +193,15 @@ public class TelaAcessorios extends javax.swing.JFrame {
                     .addComponent(jLabelId))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanelDescricaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel3)
-                    .addComponent(jTextFieldDescricao, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelDescricaoLayout.createSequentialGroup()
+                        .addComponent(jLabel3)
+                        .addGap(12, 12, 12))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelDescricaoLayout.createSequentialGroup()
+                        .addComponent(jTextFieldDescricao, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
                 .addGroup(jPanelDescricaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabelValorLocacao)
-                    .addComponent(jTextFieldValorDaLocacao, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap())
+                    .addComponent(jTextFieldValorDaLocacao, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabelValorLocacao, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
@@ -206,14 +210,11 @@ public class TelaAcessorios extends javax.swing.JFrame {
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanelDescricao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jPanelDescricao, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addComponent(jPanelDescricao, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 10, Short.MAX_VALUE))
+            .addComponent(jPanelDescricao, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         jTableAcessorios.setModel(new javax.swing.table.DefaultTableModel(
@@ -255,11 +256,11 @@ public class TelaAcessorios extends javax.swing.JFrame {
                         .addGap(67, 67, 67)
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 812, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(193, 193, 193)
-                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
                         .addGap(409, 409, 409)
-                        .addComponent(jButtonHome, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jButtonHome, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(100, 100, 100)
+                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -311,6 +312,7 @@ public class TelaAcessorios extends javax.swing.JFrame {
             Acessorios objeto = new Acessorios(0, jTextFieldDescricao.getText(), jTextFieldValorDaLocacao.getText());
             acessoriosControle.incluir(objeto);
             jTextFieldDescricao.setText("");
+            jTextFieldValorDaLocacao.setText("");
             imprimirDadosNaGrid(incluirAcessorios.listagem());
 
         } catch (Exception erro) {
@@ -326,6 +328,8 @@ public class TelaAcessorios extends javax.swing.JFrame {
             IAcessoriosControle incluirMarca = new AcessoriosControle();
             Acessorios objeto = new Acessorios(Integer.parseInt(jTextFieldIdentificador.getText()), jTextFieldDescricao.getText(), jTextFieldValorDaLocacao.getText());
             acessoriosControle.alterar(objeto);
+            jTextFieldDescricao.setText("");
+            jTextFieldValorDaLocacao.setText("");
             imprimirDadosNaGrid(incluirMarca.listagem());
         } catch (Exception ex) {
 
@@ -333,6 +337,8 @@ public class TelaAcessorios extends javax.swing.JFrame {
         jTextFieldDescricao.setText("");
     }//GEN-LAST:event_jButtonAlterarActionPerformed
 
+    
+    
     private void jButtonHomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonHomeActionPerformed
         // TODO add your handling code here:
         TelaHome frame = new TelaHome();
@@ -343,16 +349,6 @@ public class TelaAcessorios extends javax.swing.JFrame {
     private void jTextFieldIdentificadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldIdentificadorActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextFieldIdentificadorActionPerformed
-
-    private void jTextFieldDescricaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldDescricaoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldDescricaoActionPerformed
-
-    private void jTextFieldDescricaoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldDescricaoKeyTyped
-        // TODO add your handling code here:
-
-
-    }//GEN-LAST:event_jTextFieldDescricaoKeyTyped
 
     private void jTextFieldValorDaLocacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldValorDaLocacaoActionPerformed
         // TODO add your handling code here:
@@ -369,6 +365,23 @@ public class TelaAcessorios extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, e);
         }
     }//GEN-LAST:event_jTableAcessoriosMouseClicked
+
+    private void jTextFieldDescricaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldDescricaoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldDescricaoActionPerformed
+
+    private void jTextFieldDescricaoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldDescricaoKeyTyped
+        // TODO add your handling code here:
+        char e = evt.getKeyChar();
+
+        if (!Character.isLetter(e)) {
+            evt.consume();
+        }
+
+        if (Character.isLowerCase(e)) {
+            evt.setKeyChar(Character.toUpperCase(e));
+        }
+    }//GEN-LAST:event_jTextFieldDescricaoKeyTyped
 
     /**
      * @param args the command line arguments

@@ -18,10 +18,10 @@ import javax.swing.JFileChooser;
 import com.locagyn.imagensnatela.JTableRenderer;
 import com.locagyn.modelos.Marca;
 import com.locagyn.modelos.Modelo;
-import com.locagyn.persistencia.IMarcaDao;
-import com.locagyn.persistencia.IModeloDao;
-import com.locagyn.persistencia.MarcaDao;
-import com.locagyn.persistencia.ModeloDao;
+//import com.locagyn.persistencia.IMarcaDao;
+//import com.locagyn.persistencia.IModeloDao;
+//import com.locagyn.persistencia.MarcaDao;
+//import com.locagyn.persistencia.ModeloDao;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
