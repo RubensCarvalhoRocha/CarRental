@@ -307,7 +307,7 @@ public class TelaAcessorios extends javax.swing.JFrame {
         // TODO add your handling code here:
         try {
 
-            IAcessoriosControle incluirAcessorios = new AcessoriosControle(); // pog
+            IAcessoriosControle incluirAcessorios = new AcessoriosControle(); 
 
             Acessorios objeto = new Acessorios(0, jTextFieldDescricao.getText(), jTextFieldValorDaLocacao.getText());
             acessoriosControle.incluir(objeto);

@@ -8,44 +8,43 @@ package com.locagyn.modelos;
  *
  * @author arthu
  */
-public class Acessorios {
-    //Atributos
+public class Categoria {
+     //Atributos
     private int id = 0;
     private String descricao = "";
     private String valor = "";
     //Metodos
-    public Acessorios(){
+    public Categoria(){
     }
-    public Acessorios(int id, String descricao, String valor){
+    public Categoria(int id, String descricao, String valor){
         this.id = id;
         this.descricao = descricao;
         this.valor = valor;
     }
-    public int getId() {
+    public int getId(){
         return id;
     }
-    public void setId(int id) {
+    public void setId(int id){
         this.id = id;
     }
-    public String getDescricao() {
+    public String getDescricao(){
         return descricao;
     }
     public void setDescricao(String descricao) {
         this.descricao = descricao;
     }
-    public String getValor() {
+    public String getValor(){
         return valor;
     }
-    public void setValor(String url) {
+    public void setValor(String url){
         this.valor= url;
     }
+
+        
+    
     @Override
     public String toString() {
         return id + ";" + descricao + ";" + valor;
     }
-    
-    
-    
-    
     
 }
