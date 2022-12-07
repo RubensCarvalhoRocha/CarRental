@@ -1,3 +1,4 @@
 4;GOLA1;.\src\com\locagyn\modelosPng/gol.png;2
 5;TESTE;.\src\com\locagyn\modelosPng/gol.png;2
 6;GOL;.\src\com\locagyn\modelosPng/gol.png;2
+12;DJJDDJJD;.\src\com\locagyn\modelosPng/kicks.png;2

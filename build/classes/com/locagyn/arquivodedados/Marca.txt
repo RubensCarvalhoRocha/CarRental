@@ -1,3 +1,4 @@
 1;CHEVA;.\src\com\locagyn\logos/chevrolet.png
 2;TOIOTAA;.\src\com\locagyn\logos/toyota-202914.png
 3;TOYOTA;.\src\com\locagyn\logos/toyota-202914.png
+11;NISSAN;.\src\com\locagyn\logos/nissan-202859.png

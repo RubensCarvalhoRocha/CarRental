@@ -34,7 +34,7 @@ public class LimitaCaracteres extends PlainDocument{
         //FILTRO DE CARACTERES
         String regex = "";
         switch(tpEntrada){
-            case NUMEROINTEIRO: regex = "^[0-9]"; break;
+            case NUMEROINTEIRO: regex = "[^0-9]"; break;
             case NUMERODECIMAL: regex = "[^0-9,.]"; break;
             case NOME: regex = "[^\\p{IsLatin} ] "; break;
             case EMAIL: regex = "[^\\p{IsLatin}@.\\-_ ] "; break;

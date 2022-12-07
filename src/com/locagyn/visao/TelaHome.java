@@ -27,16 +27,33 @@ public class TelaHome extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jButtonVeiculo = new javax.swing.JButton();
+        jButtonMotorista = new javax.swing.JButton();
         jButtonCategoria = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        jButtonAcessorios = new javax.swing.JButton();
         jButtonMarcas = new javax.swing.JButton();
         jButtonModelos = new javax.swing.JButton();
+        jButtonCliente = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
-        jButtonMarcas1 = new javax.swing.JButton();
-        jButtonMarcas2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jButtonVeiculo.setText("Cadastrar Veiculo");
+        jButtonVeiculo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonVeiculoActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButtonVeiculo, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 600, 210, 40));
+
+        jButtonMotorista.setText("Cadastrar Motorista");
+        jButtonMotorista.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonMotoristaActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButtonMotorista, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 550, 210, 40));
 
         jButtonCategoria.setText("Cadastrar Categorias");
         jButtonCategoria.addActionListener(new java.awt.event.ActionListener() {
@@ -44,15 +61,15 @@ public class TelaHome extends javax.swing.JFrame {
                 jButtonCategoriaActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonCategoria, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 630, 210, 40));
+        getContentPane().add(jButtonCategoria, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 450, 210, 40));
 
-        jButton1.setText("Cadastrar Acessorios");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        jButtonAcessorios.setText("Cadastrar Acessorios");
+        jButtonAcessorios.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                jButtonAcessoriosActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 580, 210, 40));
+        getContentPane().add(jButtonAcessorios, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 500, 210, 40));
 
         jButtonMarcas.setText("Cadrastrar Marcas");
         jButtonMarcas.setBorder(null);
@@ -61,7 +78,7 @@ public class TelaHome extends javax.swing.JFrame {
                 jButtonMarcasActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonMarcas, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 480, 210, 40));
+        getContentPane().add(jButtonMarcas, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 350, 210, 40));
 
         jButtonModelos.setText("Cadrastrar Modelos");
         jButtonModelos.addActionListener(new java.awt.event.ActionListener() {
@@ -69,29 +86,19 @@ public class TelaHome extends javax.swing.JFrame {
                 jButtonModelosActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonModelos, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 530, 210, 40));
+        getContentPane().add(jButtonModelos, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 400, 210, 40));
+
+        jButtonCliente.setText("Cadastrar Cliente");
+        jButtonCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonClienteActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButtonCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 652, 210, 40));
 
         jLabel2.setBackground(new java.awt.Color(0, 0, 0));
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/locagyn/gifseimagens/Post para instagram oportunidade venda de carros moderno vermelho (1).gif"))); // NOI18N
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1060, 730));
-
-        jButtonMarcas1.setText("Cadrastrar Marcas");
-        jButtonMarcas1.setBorder(null);
-        jButtonMarcas1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonMarcas1ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButtonMarcas1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 570, 210, 40));
-
-        jButtonMarcas2.setText("Cadrastrar Marcas");
-        jButtonMarcas2.setBorder(null);
-        jButtonMarcas2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonMarcas2ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButtonMarcas2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 530, 210, 40));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -111,21 +118,12 @@ public class TelaHome extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_jButtonModelosActionPerformed
 
-    private void jButtonMarcas1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonMarcas1ActionPerformed
-        // TODO add your handling code here:
-        
-    }//GEN-LAST:event_jButtonMarcas1ActionPerformed
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void jButtonAcessoriosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAcessoriosActionPerformed
         // TODO add your handling code here:
          TelaAcessorios frame = new TelaAcessorios();
         frame.setVisible(true);
         this.setVisible(false);
-    }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void jButtonMarcas2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonMarcas2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButtonMarcas2ActionPerformed
+    }//GEN-LAST:event_jButtonAcessoriosActionPerformed
 
     private void jButtonCategoriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCategoriaActionPerformed
         // TODO add your handling code here:
@@ -133,6 +131,27 @@ public class TelaHome extends javax.swing.JFrame {
         frame.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jButtonCategoriaActionPerformed
+
+    private void jButtonMotoristaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonMotoristaActionPerformed
+        // TODO add your handling code here:
+        TelaMotorista frame = new TelaMotorista();
+        frame.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jButtonMotoristaActionPerformed
+
+    private void jButtonVeiculoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVeiculoActionPerformed
+        // TODO add your handling code here:
+        TelaVeiculo frame = new TelaVeiculo();
+        frame.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jButtonVeiculoActionPerformed
+
+    private void jButtonClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonClienteActionPerformed
+        // TODO add your handling code here:
+        TelaClienteOpcao frame = new TelaClienteOpcao();
+        frame.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jButtonClienteActionPerformed
 
     /**
      * @param args the command line arguments
@@ -170,12 +189,13 @@ public class TelaHome extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButtonAcessorios;
     private javax.swing.JButton jButtonCategoria;
+    private javax.swing.JButton jButtonCliente;
     private javax.swing.JButton jButtonMarcas;
-    private javax.swing.JButton jButtonMarcas1;
-    private javax.swing.JButton jButtonMarcas2;
     private javax.swing.JButton jButtonModelos;
+    private javax.swing.JButton jButtonMotorista;
+    private javax.swing.JButton jButtonVeiculo;
     private javax.swing.JLabel jLabel2;
     // End of variables declaration//GEN-END:variables
 
