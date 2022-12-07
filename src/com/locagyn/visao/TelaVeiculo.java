@@ -383,18 +383,7 @@ public class TelaVeiculo extends javax.swing.JFrame {
 
     private void jTableMarcasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTableMarcasMouseClicked
         // TODO add your handling code here:
-        try {
-            this.jTextFieldPlaca.setText(jTableMarcas.getValueAt(jTableMarcas.getSelectedRow(), 0).toString());
-            this.jTextFieldRenavam.setText(jTableMarcas.getValueAt(jTableMarcas.getSelectedRow(), 1).toString());
-            this.jTextFieldPrecoVenda.setText(jTableMarcas.getValueAt(jTableMarcas.getSelectedRow(), 2).toString());
-            String nomeArquivo = (String) this.jTableMarcas.getValueAt(jTableMarcas.getSelectedRow(), 2);
-            jTextFieldPrecoVenda.setText(nomeArquivo);
-            ImageIcon iconLogo = new ImageIcon(nomeArquivo);
-            iconLogo.setImage(iconLogo.getImage().getScaledInstance(jLabelLogo.getWidth(), jLabelLogo.getHeight(), 1));
-            jLabelLogo.setIcon(iconLogo);
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(this, e);
-        }
+     
     }//GEN-LAST:event_jTableMarcasMouseClicked
 
     private void jTextFieldPlacaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldPlacaActionPerformed
@@ -449,57 +438,17 @@ public class TelaVeiculo extends javax.swing.JFrame {
 
     private void jButtonBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBuscarActionPerformed
         // TODO add your handling code here:
-        try {
-            JFileChooser fc = new JFileChooser();
-            File logo = new File("./src/com/locagyn/logos");
-            fc.setCurrentDirectory(logo);
-            fc.setFileSelectionMode(JFileChooser.FILES_ONLY);
-            fc.showOpenDialog(this);
-            File arquivo = fc.getSelectedFile();
-            String nomeDoArquivo = arquivo.getPath();
-            String nome = arquivo.getName();
-            String url = logo.getPath();
-            url += "/" + nome;
-            System.out.println(url);
-            jTextFieldPrecoVenda.setText(url);
-            ImageIcon iconLogo = new ImageIcon(nomeDoArquivo);
-            iconLogo.setImage(iconLogo.getImage().getScaledInstance(jLabelLogo.getWidth(), jLabelLogo.getHeight(), 1));
-            jLabelLogo.setIcon(iconLogo);
-
-        } catch (Exception erro) {
-            JOptionPane.showMessageDialog(this, "Selecione a Imagem");
-        }
+      
     }//GEN-LAST:event_jButtonBuscarActionPerformed
 
     private void jButtonIncluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonIncluirActionPerformed
         // TODO add your handling code here:
-        try {
-
-            IMarcaControle incluirMarca = new MarcaControle(); // pog
-
-            Marca objeto = new Marca(0, jTextFieldRenavam.getText(), jTextFieldPrecoVenda.getText());
-            marcaControle.incluir(objeto);
-            jTextFieldRenavam.setText("");
-            imprimirDadosNaGrid(incluirMarca.listagem());
-
-        } catch (Exception erro) {
-            JOptionPane.showMessageDialog(this, erro.getMessage());
-        }
+      
     }//GEN-LAST:event_jButtonIncluirActionPerformed
 
     private void jButtonAlterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAlterarActionPerformed
         // TODO add your handling code here:
 
-        try {
-
-            IMarcaControle incluirMarca = new MarcaControle(); // pog
-            Marca objeto = new Marca(Integer.parseInt(jTextFieldPlaca.getText()), jTextFieldRenavam.getText(), jTextFieldPrecoVenda.getText());
-            marcaControle.alterar(objeto);
-            imprimirDadosNaGrid(incluirMarca.listagem());
-        } catch (Exception ex) {
-
-        }
-        jTextFieldRenavam.setText("");
     }//GEN-LAST:event_jButtonAlterarActionPerformed
 
     private void jButtonHomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonHomeActionPerformed
