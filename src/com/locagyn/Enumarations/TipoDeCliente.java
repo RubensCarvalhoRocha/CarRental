@@ -8,7 +8,7 @@ package com.locagyn.Enumarations;
  *
  * @author ruben
  */
-public enum TipoDoCliente {
+public enum TipoDeCliente {
         PESSOA_FISICA,
         PESSOA_JURIDICA;
 }
