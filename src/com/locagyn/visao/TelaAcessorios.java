@@ -28,6 +28,10 @@ public class TelaAcessorios extends javax.swing.JFrame {
     public TelaAcessorios() {
         initComponents();
         loadComboBox();
+        //limitando caracteres
+        jTextFieldDescricao.setDocument(new LimitaCaracteres(10, LimitaCaracteres.TipoEntrada.NOME));
+        jTextFieldValorDaLocacao.setDocument(new LimitaCaracteres(10, LimitaCaracteres.TipoEntrada.NUMERODECIMAL));
+        
         this.setLocationRelativeTo(null);
         jTextFieldIdentificador.setEditable(false);
         try {
@@ -35,8 +39,7 @@ public class TelaAcessorios extends javax.swing.JFrame {
         } catch (Exception erro) {
             JOptionPane.showMessageDialog(this, erro.getMessage());
         }
-         jTextFieldDescricao.setDocument(new LimitaCaracteres(10, LimitaCaracteres.TipoEntrada.NOME));
-         jTextFieldValorDaLocacao.setDocument(new LimitaCaracteres(10, LimitaCaracteres.TipoEntrada.NUMERODECIMAL));
+         
     }
 
     /**

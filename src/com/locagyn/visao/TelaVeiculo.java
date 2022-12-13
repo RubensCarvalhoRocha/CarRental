@@ -7,6 +7,7 @@ package com.locagyn.visao;
 import com.locagyn.Enumarations.SituacaoDoVeiculo;
 import com.locagyn.Enumarations.TipoDeCombustivel;
 import com.locagyn.Enumarations.TipoDoVeiculo;
+import com.locagyn.LimitarCaracteres.LimitaCaracteres;
 import javax.swing.DefaultComboBoxModel;
 
 /**
@@ -22,11 +23,16 @@ public class TelaVeiculo extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(null);
         
-
-        //criando metodo para a combobox de combustiveis
+        //criando metodo para a combobox
         loadComboBox();
-    }
-
+        jTextFieldAnoFabricacao.setDocument(new LimitaCaracteres(4, LimitaCaracteres.TipoEntrada.NUMEROINTEIRO));
+        jTextFieldAnoModelo.setDocument(new LimitaCaracteres(4, LimitaCaracteres.TipoEntrada.NUMEROINTEIRO));
+        jTextFieldPlaca.setDocument(new LimitaCaracteres(9, LimitaCaracteres.TipoEntrada.NOME));
+        jTextFieldPrecoCompra.setDocument(new LimitaCaracteres(12, LimitaCaracteres.TipoEntrada.NUMERODECIMAL));
+        jTextFieldPrecoVenda.setDocument(new LimitaCaracteres(12, LimitaCaracteres.TipoEntrada.NUMERODECIMAL));
+        jTextFieldQuilometragem.setDocument(new LimitaCaracteres(15, LimitaCaracteres.TipoEntrada.NUMERODECIMAL));
+        jTextFieldRenavam.setDocument(new LimitaCaracteres(12, LimitaCaracteres.TipoEntrada.NUMEROINTEIRO));
+                         }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always

@@ -19,7 +19,7 @@ public class TelaClienteCPF extends javax.swing.JFrame {
         initComponents();
         //Limitando Caracteres
         setLocationRelativeTo(null);
-
+         //Limitando Caracteres
         jTextFieldTelefone.setDocument(new LimitaCaracteres(12, LimitaCaracteres.TipoEntrada.NUMEROINTEIRO));
         jTextFieldEmail.setDocument(new LimitaCaracteres(20, LimitaCaracteres.TipoEntrada.EMAIL));
         jTextFieldCpf.setDocument(new LimitaCaracteres(11, LimitaCaracteres.TipoEntrada.NUMEROINTEIRO));
