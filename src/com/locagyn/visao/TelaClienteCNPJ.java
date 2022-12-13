@@ -17,13 +17,12 @@ public class TelaClienteCNPJ extends javax.swing.JFrame {
      */
     public TelaClienteCNPJ() {
         initComponents();
-        //Limitando Caracteres
         setLocationRelativeTo(null);
-
-        jTextFieldCNPJ.setDocument(new LimitaCaracteres(14, LimitaCaracteres.TipoEntrada.NUMEROINTEIRO));
+        //Limitando Caracteres
+        //jTextFieldCNPJ.setDocument(new LimitaCaracteres(14, LimitaCaracteres.TipoEntrada.NUMEROINTEIRO));
         jTextFieldEmail.setDocument(new LimitaCaracteres(20, LimitaCaracteres.TipoEntrada.EMAIL));
         jTextFieldRazaoSocial.setDocument(new LimitaCaracteres(20, LimitaCaracteres.TipoEntrada.NOME));
-        jTextFieldTelefone.setDocument(new LimitaCaracteres(12, LimitaCaracteres.TipoEntrada.NUMEROINTEIRO));
+        //jTextFieldTelefone.setDocument(new LimitaCaracteres(12, LimitaCaracteres.TipoEntrada.NUMEROINTEIRO));
     }
 
     /**
@@ -43,17 +42,17 @@ public class TelaClienteCNPJ extends javax.swing.JFrame {
         jTableClienteCNPJ = new javax.swing.JTable();
         jPanel4 = new javax.swing.JPanel();
         jPanel5 = new javax.swing.JPanel();
-        jTextFieldCNPJ = new javax.swing.JTextField();
         jLabelTelefone = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabelRazaoSocial = new javax.swing.JLabel();
         jTextFieldRazaoSocial = new javax.swing.JTextField();
         jLabelNome = new javax.swing.JLabel();
         jTextFieldEndereco = new javax.swing.JTextField();
-        jTextFieldTelefone = new javax.swing.JTextField();
         jLabelEmail = new javax.swing.JLabel();
         jTextFieldEmail = new javax.swing.JTextField();
         jLabelEndereco1 = new javax.swing.JLabel();
+        jFormattedTextFieldCNPJ = new javax.swing.JFormattedTextField();
+        jFormattedTextField1 = new javax.swing.JFormattedTextField();
         jButtonHome = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -132,13 +131,6 @@ public class TelaClienteCNPJ extends javax.swing.JFrame {
         });
         jScrollPane2.setViewportView(jTableClienteCNPJ);
 
-        jTextFieldCNPJ.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jTextFieldCNPJ.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldCNPJActionPerformed(evt);
-            }
-        });
-
         jLabelTelefone.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jLabelTelefone.setText("Telefone");
 
@@ -164,13 +156,6 @@ public class TelaClienteCNPJ extends javax.swing.JFrame {
             }
         });
 
-        jTextFieldTelefone.setFont(new java.awt.Font("Arial", 3, 24)); // NOI18N
-        jTextFieldTelefone.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldTelefoneActionPerformed(evt);
-            }
-        });
-
         jLabelEmail.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jLabelEmail.setText("Email");
 
@@ -184,6 +169,24 @@ public class TelaClienteCNPJ extends javax.swing.JFrame {
         jLabelEndereco1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jLabelEndereco1.setText("Endereco");
 
+        try {
+            jFormattedTextFieldCNPJ.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###-##")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+
+        try {
+            jFormattedTextField1.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("(##) #####-####")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+        jFormattedTextField1.setText("(  )      -    ");
+        jFormattedTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jFormattedTextField1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
@@ -196,10 +199,10 @@ public class TelaClienteCNPJ extends javax.swing.JFrame {
                     .addComponent(jLabelRazaoSocial)
                     .addComponent(jLabelTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTextFieldTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextFieldRazaoSocial, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextFieldCNPJ, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jTextFieldRazaoSocial, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+                    .addComponent(jFormattedTextFieldCNPJ)
+                    .addComponent(jFormattedTextField1))
                 .addGap(47, 47, 47)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel5Layout.createSequentialGroup()
@@ -224,23 +227,23 @@ public class TelaClienteCNPJ extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabelEndereco1)
-                            .addComponent(jTextFieldEndereco, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(jTextFieldEndereco, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
+                        .addComponent(jLabel5))
                     .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jTextFieldCNPJ, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabelNome))
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabelNome, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jFormattedTextFieldCNPJ))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jTextFieldRazaoSocial, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabelRazaoSocial))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabelTelefone)
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel5Layout.createSequentialGroup()
-                                .addComponent(jTextFieldTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                                .addGap(1, 1, 1)))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 8, Short.MAX_VALUE)
-                .addComponent(jLabel5))
+                                .addComponent(jLabelTelefone)
+                                .addGap(0, 2, Short.MAX_VALUE))
+                            .addComponent(jFormattedTextField1)))))
         );
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
@@ -395,10 +398,6 @@ public class TelaClienteCNPJ extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jTableClienteCNPJMouseClicked
 
-    private void jTextFieldCNPJActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldCNPJActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldCNPJActionPerformed
-
     private void jTextFieldRazaoSocialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldRazaoSocialActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextFieldRazaoSocialActionPerformed
@@ -406,10 +405,6 @@ public class TelaClienteCNPJ extends javax.swing.JFrame {
     private void jTextFieldEnderecoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldEnderecoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextFieldEnderecoActionPerformed
-
-    private void jTextFieldTelefoneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldTelefoneActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldTelefoneActionPerformed
 
     private void jTextFieldEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldEmailActionPerformed
         // TODO add your handling code here:
@@ -421,6 +416,10 @@ public class TelaClienteCNPJ extends javax.swing.JFrame {
         frame.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jButtonHomeActionPerformed
+
+    private void jFormattedTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFormattedTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jFormattedTextField1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -462,6 +461,8 @@ public class TelaClienteCNPJ extends javax.swing.JFrame {
     private javax.swing.JButton jButtonBuscar;
     private javax.swing.JButton jButtonHome;
     private javax.swing.JButton jButtonIncluir;
+    private javax.swing.JFormattedTextField jFormattedTextField1;
+    private javax.swing.JFormattedTextField jFormattedTextFieldCNPJ;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabelEmail;
@@ -475,10 +476,8 @@ public class TelaClienteCNPJ extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel5;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTableClienteCNPJ;
-    private javax.swing.JTextField jTextFieldCNPJ;
     private javax.swing.JTextField jTextFieldEmail;
     private javax.swing.JTextField jTextFieldEndereco;
     private javax.swing.JTextField jTextFieldRazaoSocial;
-    private javax.swing.JTextField jTextFieldTelefone;
     // End of variables declaration//GEN-END:variables
 }

@@ -210,11 +210,11 @@
                   </Group>
                   <EmptySpace min="-2" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Component id="jTextFieldPlaca" alignment="0" max="32767" attributes="0"/>
+                      <Component id="jTextFieldPlaca" alignment="0" pref="200" max="32767" attributes="0"/>
                       <Component id="jTextFieldRenavam" alignment="0" max="32767" attributes="0"/>
                       <Component id="jTextFieldPrecoCompra" alignment="0" max="32767" attributes="0"/>
                       <Component id="jTextFieldPrecoVenda" alignment="0" max="32767" attributes="0"/>
-                      <Component id="jTextFieldAnoFabricacao" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
+                      <Component id="jFormattedTextFieldAnoFabricacao" alignment="0" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
@@ -224,9 +224,9 @@
                               <Component id="jLabelCombustivel" alignment="0" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="jTextFieldAnoModelo" pref="200" max="32767" attributes="0"/>
-                              <Component id="jComboBoxCombustivel" max="32767" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="jComboBoxCombustivel" min="-2" pref="200" max="-2" attributes="0"/>
+                              <Component id="jFormattedTextFieldAnoModelo" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
@@ -259,9 +259,8 @@
               <Group type="102" alignment="0" attributes="0">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="1" attributes="0">
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jTextFieldAnoModelo" min="-2" pref="31" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="jFormattedTextFieldAnoModelo" pref="32" max="32767" attributes="0"/>
+                          <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
                               <Component id="jLabelCombustivel" max="32767" attributes="0"/>
                               <Component id="jComboBoxCombustivel" max="32767" attributes="0"/>
@@ -274,7 +273,7 @@
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="jLabelTipoVeiculo" min="-2" max="-2" attributes="0"/>
-                              <Component id="jComboBoxCategoria" pref="34" max="32767" attributes="0"/>
+                              <Component id="jComboBoxCategoria" pref="39" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="jComboBoxSituacao" min="-2" pref="38" max="-2" attributes="0"/>
@@ -308,12 +307,12 @@
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabelAnoFabricacao" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jTextFieldAnoFabricacao" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabelTipoVeiculo1" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jFormattedTextFieldAnoFabricacao" alignment="3" pref="32" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
-                  <EmptySpace pref="9" max="32767" attributes="0"/>
+                  <EmptySpace pref="13" max="32767" attributes="0"/>
                   <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -416,16 +415,6 @@
             <Property name="text" type="java.lang.String" value="Quilometragem"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextFieldAnoFabricacao">
-          <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Arial" size="24" style="3"/>
-            </Property>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextFieldAnoFabricacaoActionPerformed"/>
-          </Events>
-        </Component>
         <Component class="javax.swing.JLabel" name="jLabelModelo">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -433,16 +422,6 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Ano do Modelo"/>
           </Properties>
-        </Component>
-        <Component class="javax.swing.JTextField" name="jTextFieldAnoModelo">
-          <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Arial" size="24" style="3"/>
-            </Property>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextFieldAnoModeloActionPerformed"/>
-          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabelCombustivel">
           <Properties>
@@ -513,6 +492,26 @@
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;TipoDoVeiculo&gt;"/>
           </AuxValues>
+        </Component>
+        <Component class="javax.swing.JFormattedTextField" name="jFormattedTextFieldAnoFabricacao">
+          <Properties>
+            <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor" preCode="try {" postCode="} catch (java.text.ParseException ex) {&#xa;ex.printStackTrace();&#xa;}">
+              <Format format="##/##/####" subtype="-1" type="5"/>
+            </Property>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jFormattedTextFieldAnoFabricacaoActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JFormattedTextField" name="jFormattedTextFieldAnoModelo">
+          <Properties>
+            <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor" preCode="try {" postCode="} catch (java.text.ParseException ex) {&#xa;ex.printStackTrace();&#xa;}">
+              <Format format="##/##/####" subtype="-1" type="5"/>
+            </Property>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jFormattedTextFieldAnoModeloActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>

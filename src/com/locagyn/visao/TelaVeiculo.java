@@ -25,8 +25,8 @@ public class TelaVeiculo extends javax.swing.JFrame {
         
         //criando metodo para a combobox
         loadComboBox();
-        jTextFieldAnoFabricacao.setDocument(new LimitaCaracteres(4, LimitaCaracteres.TipoEntrada.NUMEROINTEIRO));
-        jTextFieldAnoModelo.setDocument(new LimitaCaracteres(4, LimitaCaracteres.TipoEntrada.NUMEROINTEIRO));
+        //jTextFieldAnoFabricacao.setDocument(new LimitaCaracteres(4, LimitaCaracteres.TipoEntrada.NUMEROINTEIRO));
+        //jTextFieldAnoModelo.setDocument(new LimitaCaracteres(4, LimitaCaracteres.TipoEntrada.NUMEROINTEIRO));
         jTextFieldPlaca.setDocument(new LimitaCaracteres(9, LimitaCaracteres.TipoEntrada.NOME));
         jTextFieldPrecoCompra.setDocument(new LimitaCaracteres(12, LimitaCaracteres.TipoEntrada.NUMERODECIMAL));
         jTextFieldPrecoVenda.setDocument(new LimitaCaracteres(12, LimitaCaracteres.TipoEntrada.NUMERODECIMAL));
@@ -58,9 +58,7 @@ public class TelaVeiculo extends javax.swing.JFrame {
         jTextFieldPrecoCompra = new javax.swing.JTextField();
         jLabelPlaca = new javax.swing.JLabel();
         jLabelQuilometragem = new javax.swing.JLabel();
-        jTextFieldAnoFabricacao = new javax.swing.JTextField();
         jLabelModelo = new javax.swing.JLabel();
-        jTextFieldAnoModelo = new javax.swing.JTextField();
         jLabelCombustivel = new javax.swing.JLabel();
         jLabelTipoVeiculo = new javax.swing.JLabel();
         jTextFieldQuilometragem = new javax.swing.JTextField();
@@ -68,6 +66,8 @@ public class TelaVeiculo extends javax.swing.JFrame {
         jLabelTipoVeiculo1 = new javax.swing.JLabel();
         jComboBoxSituacao = new javax.swing.JComboBox<>();
         jComboBoxCategoria = new javax.swing.JComboBox<>();
+        jFormattedTextFieldAnoFabricacao = new javax.swing.JFormattedTextField();
+        jFormattedTextFieldAnoModelo = new javax.swing.JFormattedTextField();
         jPanel3 = new javax.swing.JPanel();
         jButtonBuscar = new javax.swing.JButton();
         jButtonIncluir = new javax.swing.JButton();
@@ -175,22 +175,8 @@ public class TelaVeiculo extends javax.swing.JFrame {
         jLabelQuilometragem.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jLabelQuilometragem.setText("Quilometragem");
 
-        jTextFieldAnoFabricacao.setFont(new java.awt.Font("Arial", 3, 24)); // NOI18N
-        jTextFieldAnoFabricacao.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldAnoFabricacaoActionPerformed(evt);
-            }
-        });
-
         jLabelModelo.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jLabelModelo.setText("Ano do Modelo");
-
-        jTextFieldAnoModelo.setFont(new java.awt.Font("Arial", 3, 24)); // NOI18N
-        jTextFieldAnoModelo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldAnoModeloActionPerformed(evt);
-            }
-        });
 
         jLabelCombustivel.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jLabelCombustivel.setText("Combustivel");
@@ -220,6 +206,28 @@ public class TelaVeiculo extends javax.swing.JFrame {
             }
         });
 
+        try {
+            jFormattedTextFieldAnoFabricacao.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+        jFormattedTextFieldAnoFabricacao.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jFormattedTextFieldAnoFabricacaoActionPerformed(evt);
+            }
+        });
+
+        try {
+            jFormattedTextFieldAnoModelo.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+        jFormattedTextFieldAnoModelo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jFormattedTextFieldAnoModeloActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanelRenavamLayout = new javax.swing.GroupLayout(jPanelRenavam);
         jPanelRenavam.setLayout(jPanelRenavamLayout);
         jPanelRenavamLayout.setHorizontalGroup(
@@ -235,11 +243,11 @@ public class TelaVeiculo extends javax.swing.JFrame {
                     .addComponent(jLabelPrecoVenda, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanelRenavamLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jTextFieldPlaca)
+                    .addComponent(jTextFieldPlaca, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
                     .addComponent(jTextFieldRenavam)
                     .addComponent(jTextFieldPrecoCompra)
                     .addComponent(jTextFieldPrecoVenda)
-                    .addComponent(jTextFieldAnoFabricacao, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jFormattedTextFieldAnoFabricacao))
                 .addGap(18, 18, Short.MAX_VALUE)
                 .addGroup(jPanelRenavamLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanelRenavamLayout.createSequentialGroup()
@@ -247,9 +255,9 @@ public class TelaVeiculo extends javax.swing.JFrame {
                             .addComponent(jLabelModelo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jLabelCombustivel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanelRenavamLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jTextFieldAnoModelo, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
-                            .addComponent(jComboBoxCombustivel, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addGroup(jPanelRenavamLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jComboBoxCombustivel, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jFormattedTextFieldAnoModelo)))
                     .addGroup(jPanelRenavamLayout.createSequentialGroup()
                         .addGroup(jPanelRenavamLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabelQuilometragem)
@@ -271,9 +279,8 @@ public class TelaVeiculo extends javax.swing.JFrame {
             .addGroup(jPanelRenavamLayout.createSequentialGroup()
                 .addGroup(jPanelRenavamLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelRenavamLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jTextFieldAnoModelo, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jFormattedTextFieldAnoModelo, javax.swing.GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE)
+                        .addGap(11, 11, 11)
                         .addGroup(jPanelRenavamLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jLabelCombustivel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jComboBoxCombustivel))
@@ -284,7 +291,7 @@ public class TelaVeiculo extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanelRenavamLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabelTipoVeiculo)
-                            .addComponent(jComboBoxCategoria, javax.swing.GroupLayout.DEFAULT_SIZE, 34, Short.MAX_VALUE))
+                            .addComponent(jComboBoxCategoria, javax.swing.GroupLayout.DEFAULT_SIZE, 39, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jComboBoxSituacao, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanelRenavamLayout.createSequentialGroup()
@@ -310,9 +317,9 @@ public class TelaVeiculo extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanelRenavamLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabelAnoFabricacao)
-                            .addComponent(jTextFieldAnoFabricacao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabelTipoVeiculo1))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 9, Short.MAX_VALUE)
+                            .addComponent(jLabelTipoVeiculo1)
+                            .addComponent(jFormattedTextFieldAnoFabricacao, javax.swing.GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 13, Short.MAX_VALUE)
                 .addComponent(jLabel5))
         );
 
@@ -447,14 +454,6 @@ public class TelaVeiculo extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextFieldPrecoCompraActionPerformed
 
-    private void jTextFieldAnoFabricacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldAnoFabricacaoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldAnoFabricacaoActionPerformed
-
-    private void jTextFieldAnoModeloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldAnoModeloActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldAnoModeloActionPerformed
-
     private void jTextFieldQuilometragemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldQuilometragemActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextFieldQuilometragemActionPerformed
@@ -488,6 +487,14 @@ public class TelaVeiculo extends javax.swing.JFrame {
     private void jComboBoxCategoriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxCategoriaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboBoxCategoriaActionPerformed
+
+    private void jFormattedTextFieldAnoFabricacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFormattedTextFieldAnoFabricacaoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jFormattedTextFieldAnoFabricacaoActionPerformed
+
+    private void jFormattedTextFieldAnoModeloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFormattedTextFieldAnoModeloActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jFormattedTextFieldAnoModeloActionPerformed
 
     /**
      * @param args the command line arguments
@@ -533,6 +540,8 @@ public class TelaVeiculo extends javax.swing.JFrame {
     private javax.swing.JComboBox<TipoDoVeiculo> jComboBoxCategoria;
     private javax.swing.JComboBox<TipoDeCombustivel> jComboBoxCombustivel;
     private javax.swing.JComboBox<SituacaoDoVeiculo> jComboBoxSituacao;
+    private javax.swing.JFormattedTextField jFormattedTextFieldAnoFabricacao;
+    private javax.swing.JFormattedTextField jFormattedTextFieldAnoModelo;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabelAnoFabricacao;
@@ -550,8 +559,6 @@ public class TelaVeiculo extends javax.swing.JFrame {
     private javax.swing.JPanel jPanelRenavam;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTableMarcas;
-    private javax.swing.JTextField jTextFieldAnoFabricacao;
-    private javax.swing.JTextField jTextFieldAnoModelo;
     private javax.swing.JTextField jTextFieldPlaca;
     private javax.swing.JTextField jTextFieldPrecoCompra;
     private javax.swing.JTextField jTextFieldPrecoVenda;

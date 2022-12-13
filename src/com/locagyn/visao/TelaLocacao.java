@@ -24,8 +24,8 @@ public class TelaLocacao extends javax.swing.JFrame {
         
         //Limitando Caracteres:
         //import com.locagyn.LimitarCaracteres.LimitaCaracteres;
-        jTextFieldDataFinal.setDocument(new LimitaCaracteres(8, LimitaCaracteres.TipoEntrada.DATA));
-        jTextFieldDataInicio.setDocument(new LimitaCaracteres(8, LimitaCaracteres.TipoEntrada.DATA));
+        //jFormattedTextFieldDataFinal.setDocument(new LimitaCaracteres(12, LimitaCaracteres.TipoEntrada.DATA));
+        //jFormattedTextFieldDataInicio.setDocument(new LimitaCaracteres(12, LimitaCaracteres.TipoEntrada.DATA));
         jTextFieldValorLocacao.setDocument(new LimitaCaracteres(12, LimitaCaracteres.TipoEntrada.NUMERODECIMAL));
         
 //criando metodo para a combobox
@@ -46,16 +46,16 @@ public class TelaLocacao extends javax.swing.JFrame {
         jPanel4 = new javax.swing.JPanel();
         jPanel5 = new javax.swing.JPanel();
         jTextFieldID = new javax.swing.JTextField();
-        jTextFieldDataInicio = new javax.swing.JTextField();
         jLabelTelefone = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabelCpf = new javax.swing.JLabel();
         jLabelRazaoSocial = new javax.swing.JLabel();
-        jTextFieldDataFinal = new javax.swing.JTextField();
         jLabelNome = new javax.swing.JLabel();
         jLabelEmail = new javax.swing.JLabel();
         jTextFieldValorLocacao = new javax.swing.JTextField();
         jComboBoxSituacao = new javax.swing.JComboBox<>();
+        jFormattedTextFieldDataInicio = new javax.swing.JFormattedTextField();
+        jFormattedTextFieldDataInicio1 = new javax.swing.JFormattedTextField();
         jButtonHome = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jButtonLocar = new javax.swing.JButton();
@@ -98,18 +98,6 @@ public class TelaLocacao extends javax.swing.JFrame {
             }
         });
 
-        jTextFieldDataInicio.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jTextFieldDataInicio.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldDataInicioActionPerformed(evt);
-            }
-        });
-        jTextFieldDataInicio.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                jTextFieldDataInicioKeyTyped(evt);
-            }
-        });
-
         jLabelTelefone.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jLabelTelefone.setText("Situacao da Locacao");
 
@@ -121,13 +109,6 @@ public class TelaLocacao extends javax.swing.JFrame {
         jLabelRazaoSocial.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jLabelRazaoSocial.setText("Data Final");
 
-        jTextFieldDataFinal.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jTextFieldDataFinal.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldDataFinalActionPerformed(evt);
-            }
-        });
-
         jLabelNome.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jLabelNome.setText("ID");
 
@@ -138,6 +119,28 @@ public class TelaLocacao extends javax.swing.JFrame {
         jTextFieldValorLocacao.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextFieldValorLocacaoActionPerformed(evt);
+            }
+        });
+
+        try {
+            jFormattedTextFieldDataInicio.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+        jFormattedTextFieldDataInicio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jFormattedTextFieldDataInicioActionPerformed(evt);
+            }
+        });
+
+        try {
+            jFormattedTextFieldDataInicio1.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+        jFormattedTextFieldDataInicio1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jFormattedTextFieldDataInicio1ActionPerformed(evt);
             }
         });
 
@@ -154,9 +157,9 @@ public class TelaLocacao extends javax.swing.JFrame {
                     .addComponent(jLabelNome, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(jTextFieldDataInicio, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 148, Short.MAX_VALUE)
-                    .addComponent(jTextFieldID, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTextFieldDataFinal))
+                    .addComponent(jTextFieldID, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 148, Short.MAX_VALUE)
+                    .addComponent(jFormattedTextFieldDataInicio)
+                    .addComponent(jFormattedTextFieldDataInicio1, javax.swing.GroupLayout.Alignment.LEADING))
                 .addGap(81, 81, 81)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabelTelefone)
@@ -178,16 +181,17 @@ public class TelaLocacao extends javax.swing.JFrame {
                     .addComponent(jComboBoxSituacao, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabelCpf)
                     .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jTextFieldDataInicio, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabelEmail)
-                        .addComponent(jTextFieldValorLocacao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jTextFieldValorLocacao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(jFormattedTextFieldDataInicio1, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jLabelCpf, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabelRazaoSocial)
-                    .addComponent(jTextFieldDataFinal, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabelRazaoSocial, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jFormattedTextFieldDataInicio))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel5))
         );
 
@@ -340,28 +344,6 @@ public class TelaLocacao extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextFieldIDActionPerformed
 
-    private void jTextFieldDataInicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldDataInicioActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldDataInicioActionPerformed
-
-    private void jTextFieldDataInicioKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldDataInicioKeyTyped
-        // TODO add your handling code here:
-
-        char e = evt.getKeyChar();
-
-        if (!Character.isLetter(e)) {
-            evt.consume();
-        }
-
-        if (Character.isLowerCase(e)) {
-            evt.setKeyChar(Character.toUpperCase(e));
-        }
-    }//GEN-LAST:event_jTextFieldDataInicioKeyTyped
-
-    private void jTextFieldDataFinalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldDataFinalActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldDataFinalActionPerformed
-
     private void jTextFieldValorLocacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldValorLocacaoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextFieldValorLocacaoActionPerformed
@@ -428,6 +410,14 @@ public class TelaLocacao extends javax.swing.JFrame {
         jTextFieldDataInicio.setText("");
     }//GEN-LAST:event_jButtonCancelarActionPerformed
 
+    private void jFormattedTextFieldDataInicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFormattedTextFieldDataInicioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jFormattedTextFieldDataInicioActionPerformed
+
+    private void jFormattedTextFieldDataInicio1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFormattedTextFieldDataInicio1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jFormattedTextFieldDataInicio1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -470,6 +460,8 @@ public class TelaLocacao extends javax.swing.JFrame {
     private javax.swing.JButton jButtonHome;
     private javax.swing.JButton jButtonLocar;
     private javax.swing.JComboBox<SituacaoDaLocacao> jComboBoxSituacao;
+    private javax.swing.JFormattedTextField jFormattedTextFieldDataInicio;
+    private javax.swing.JFormattedTextField jFormattedTextFieldDataInicio1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabelCpf;
@@ -483,8 +475,6 @@ public class TelaLocacao extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel5;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTableLocacao;
-    private javax.swing.JTextField jTextFieldDataFinal;
-    private javax.swing.JTextField jTextFieldDataInicio;
     private javax.swing.JTextField jTextFieldID;
     private javax.swing.JTextField jTextFieldValorLocacao;
     // End of variables declaration//GEN-END:variables
