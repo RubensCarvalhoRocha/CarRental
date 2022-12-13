@@ -216,7 +216,7 @@ public class TelaLocacao extends javax.swing.JFrame {
             }
         });
 
-        jButtonLocar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/locagyn/icones/search.png"))); // NOI18N
+        jButtonLocar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/locagyn/icones/key.png"))); // NOI18N
         jButtonLocar.setText("Locar");
         jButtonLocar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -224,7 +224,7 @@ public class TelaLocacao extends javax.swing.JFrame {
             }
         });
 
-        jButtonDevolver.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/locagyn/icones/add.png"))); // NOI18N
+        jButtonDevolver.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/locagyn/icones/deal.png"))); // NOI18N
         jButtonDevolver.setText("Devolver");
         jButtonDevolver.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -232,7 +232,7 @@ public class TelaLocacao extends javax.swing.JFrame {
             }
         });
 
-        jButtonCancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/locagyn/icones/exchange1.png"))); // NOI18N
+        jButtonCancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/locagyn/icones/cancelar (1).png"))); // NOI18N
         jButtonCancelar.setText("Cancelar");
         jButtonCancelar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
