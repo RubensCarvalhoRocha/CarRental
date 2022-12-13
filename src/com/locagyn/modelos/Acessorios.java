@@ -4,6 +4,8 @@
  */
 package com.locagyn.modelos;
 
+import com.locagyn.Enumarations.SituacaoAcessorio;
+
 /**
  *
  * @author arthu
@@ -13,13 +15,15 @@ public class Acessorios {
     private int id = 0;
     private String descricao = "";
     private String valor = "";
+    private SituacaoAcessorio situacaoAcessorio;
     //Metodos
     public Acessorios(){
     }
-    public Acessorios(int id, String descricao, String valor){
+    public Acessorios(int id, String descricao, String valor,SituacaoAcessorio situacaoAcessorio){
         this.id = id;
         this.descricao = descricao;
         this.valor = valor;
+        this.situacaoAcessorio=situacaoAcessorio;
     }
     public int getId() {
         return id;
@@ -39,9 +43,18 @@ public class Acessorios {
     public void setValor(String url) {
         this.valor= url;
     }
+
+    public SituacaoAcessorio getSituacaoAcessorio() {
+        return situacaoAcessorio;
+    }
+
+    public void setSituacaoAcessorio(SituacaoAcessorio situacaoAcessorio) {
+        this.situacaoAcessorio = situacaoAcessorio;
+    }
+    
     @Override
     public String toString() {
-        return id + ";" + descricao + ";" + valor;
+        return id + ";" + descricao + ";" + valor+";"+situacaoAcessorio;
     }
     
     

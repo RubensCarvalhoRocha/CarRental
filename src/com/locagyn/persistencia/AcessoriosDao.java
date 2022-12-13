@@ -4,6 +4,7 @@
  */
 package com.locagyn.persistencia;
 
+import com.locagyn.Enumarations.SituacaoAcessorio;
 import com.locagyn.ID.GeradorIdentificador;
 import com.locagyn.modelos.Acessorios;
 import java.io.BufferedReader;
@@ -77,6 +78,7 @@ public class AcessoriosDao implements IAcessoriosDao{
                 objetoAcessorios.setId(Integer.parseInt(vetorString[0]));
                 objetoAcessorios.setDescricao(vetorString[1]);
                 objetoAcessorios.setValor(vetorString[2]);
+                objetoAcessorios.setSituacaoAcessorio(SituacaoAcessorio.valueOf(vetorString[3]));
                 listaDeMarcas.add(objetoAcessorios);
             }
             br.close();

@@ -34,6 +34,7 @@ public class TelaHome extends javax.swing.JFrame {
         jButtonMarcas = new javax.swing.JButton();
         jButtonModelos = new javax.swing.JButton();
         jButtonCliente = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -45,7 +46,7 @@ public class TelaHome extends javax.swing.JFrame {
                 jButtonVeiculoActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonVeiculo, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 600, 210, 40));
+        getContentPane().add(jButtonVeiculo, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 540, 210, 40));
 
         jButtonMotorista.setText("Cadastrar Motorista");
         jButtonMotorista.addActionListener(new java.awt.event.ActionListener() {
@@ -53,7 +54,7 @@ public class TelaHome extends javax.swing.JFrame {
                 jButtonMotoristaActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonMotorista, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 550, 210, 40));
+        getContentPane().add(jButtonMotorista, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 490, 210, 40));
 
         jButtonCategoria.setText("Cadastrar Categorias");
         jButtonCategoria.addActionListener(new java.awt.event.ActionListener() {
@@ -61,7 +62,7 @@ public class TelaHome extends javax.swing.JFrame {
                 jButtonCategoriaActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonCategoria, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 450, 210, 40));
+        getContentPane().add(jButtonCategoria, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 390, 210, 40));
 
         jButtonAcessorios.setText("Cadastrar Acessorios");
         jButtonAcessorios.addActionListener(new java.awt.event.ActionListener() {
@@ -69,7 +70,7 @@ public class TelaHome extends javax.swing.JFrame {
                 jButtonAcessoriosActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonAcessorios, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 500, 210, 40));
+        getContentPane().add(jButtonAcessorios, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 440, 210, 40));
 
         jButtonMarcas.setText("Cadrastrar Marcas");
         jButtonMarcas.setBorder(null);
@@ -78,7 +79,7 @@ public class TelaHome extends javax.swing.JFrame {
                 jButtonMarcasActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonMarcas, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 350, 210, 40));
+        getContentPane().add(jButtonMarcas, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 290, 210, 40));
 
         jButtonModelos.setText("Cadrastrar Modelos");
         jButtonModelos.addActionListener(new java.awt.event.ActionListener() {
@@ -86,7 +87,7 @@ public class TelaHome extends javax.swing.JFrame {
                 jButtonModelosActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonModelos, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 400, 210, 40));
+        getContentPane().add(jButtonModelos, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 340, 210, 40));
 
         jButtonCliente.setText("Cadastrar Cliente");
         jButtonCliente.addActionListener(new java.awt.event.ActionListener() {
@@ -94,7 +95,15 @@ public class TelaHome extends javax.swing.JFrame {
                 jButtonClienteActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 652, 210, 40));
+        getContentPane().add(jButtonCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 590, 210, 40));
+
+        jButton1.setText("Locacao");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 640, 210, 40));
 
         jLabel2.setBackground(new java.awt.Color(0, 0, 0));
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/locagyn/gifseimagens/Post para instagram oportunidade venda de carros moderno vermelho (1).gif"))); // NOI18N
@@ -153,6 +162,13 @@ public class TelaHome extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_jButtonClienteActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        TelaLocacao frame = new TelaLocacao();
+        frame.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -189,6 +205,7 @@ public class TelaHome extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButtonAcessorios;
     private javax.swing.JButton jButtonCategoria;
     private javax.swing.JButton jButtonCliente;
