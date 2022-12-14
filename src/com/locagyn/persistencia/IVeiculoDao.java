@@ -12,8 +12,10 @@ import java.util.ArrayList;
  * @author felip
  */
 public interface IVeiculoDao {
-     void incluir(Veiculo objeto)throws Exception;
-    void alterar(Veiculo objeto)throws Exception;
-    ArrayList<Veiculo> listagem()throws Exception;
+     void incluir (Veiculo objeto)throws Exception;
+     
+    void alterar (Veiculo objeto)throws Exception;
     
+    ArrayList<Veiculo> listagem()throws Exception;
+    Veiculo buscar (int id) throws Exception;
 }

@@ -24,7 +24,7 @@ public class ModeloControle implements IModeloControle{
         this.modeloPersistencia = new ModeloDao();
     }
 
-    private boolean buscarModelo(String descricao) throws Exception {
+    public boolean buscarModelo(String descricao) throws Exception {
         try {
             ArrayList<Modelo> listagem = modeloPersistencia.listagem();
             Iterator<Modelo> lista = listagem.iterator();
@@ -72,6 +72,10 @@ public class ModeloControle implements IModeloControle{
     @Override
     public ArrayList<Modelo> listagem() throws Exception {
        return modeloPersistencia.listagem();
+    }
+    
+     public Modelo buscar(int id)throws Exception{
+        return modeloPersistencia.buscar(id);
     }
     public void ChecarTxtModelo() {
         

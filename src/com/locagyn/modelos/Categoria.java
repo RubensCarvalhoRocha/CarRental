@@ -12,11 +12,11 @@ public class Categoria {
      //Atributos
     private int id = 0;
     private String descricao = "";
-    private String valor = "";
+    private float valor =0;
     //Metodos
     public Categoria(){
     }
-    public Categoria(int id, String descricao, String valor){
+    public Categoria(int id, String descricao, float valor){
         this.id = id;
         this.descricao = descricao;
         this.valor = valor;
@@ -33,11 +33,11 @@ public class Categoria {
     public void setDescricao(String descricao) {
         this.descricao = descricao;
     }
-    public String getValor(){
+    public float getValor(){
         return valor;
     }
-    public void setValor(String url){
-        this.valor= url;
+    public void setValor(float valor){
+        this.valor= valor;
     }
 
         

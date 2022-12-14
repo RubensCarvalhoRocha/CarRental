@@ -1,5 +1,1 @@
-7;gwyifvye;uyqvdvyw
-8;Af3333;300
-9;iun;jujn
-10;hatch;600
-14;suv;4894848654
+32;sedan;100.0

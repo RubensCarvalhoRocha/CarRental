@@ -4,48 +4,64 @@
  */
 package com.locagyn.modelos;
 
+import com.locagyn.Enumarations.SituacaoDoVeiculo;
+import com.locagyn.Enumarations.TipoDeCombustivel;
+import com.locagyn.Enumarations.TipoDoVeiculo;
+
 /**
  *
- * @author felip
+ * @author felipe
  */
 public class Veiculo {
+
     private int id;
-   private String placa;
-   private int renavam;
-   private float precoCompra;
-   private float precoVenda;
-   private int anoFabricacao;
-   private int anoModelo;
-   private Object combustivel;
-   private int quilometragem;
-   private Object tipodoVeiculo;
-   
-   
-   public Veiculo(){
-   }
-   
-   public Veiculo(String placa, int renavam,int id,
-           float precoCompra,
-           float precoVenda,
-           int anoFabricacao, 
-           int anoModelo,
-           Object combustivel,
-           int quilometragem,
-           Object tipodoVeiculo
-           ){
-       this.id = id;
-       this.renavam = renavam;
-       this.precoCompra = precoCompra;
-       this.placa = placa;
-       this.precoVenda = precoVenda;
-       this.anoFabricacao = anoFabricacao;
-       this.anoModelo = anoModelo;
-       this.combustivel = combustivel;
-       this.quilometragem = quilometragem;
-       this.tipodoVeiculo = tipodoVeiculo;
-       
-       
-   }
+    private String placa;
+    private String renavam;
+    private float precoDeCompra;
+    private float precoDeVenda;
+    private int anoFabricacao;
+    private int anoModelo;
+    private TipoDeCombustivel combustivel;
+    private int quilometragem;
+    private TipoDoVeiculo tipoVeiculo;
+    private SituacaoDoVeiculo situacao;
+    private Modelo modelo;
+    private Categoria categoria;
+
+    public Veiculo() {
+    }
+
+    public Veiculo(int id, String placa, String renavam, float precoDeCompra, float precoDeVenda, int anoFabricacao, int anoModelo, TipoDeCombustivel combustivel, int quilometragem, TipoDoVeiculo tipoVeiculo, SituacaoDoVeiculo situacao, Modelo modelo, Categoria categoria) {
+        this.id = id;
+        this.placa = placa;
+        this.renavam = renavam;
+        this.precoDeCompra = precoDeCompra;
+        this.precoDeVenda = precoDeVenda;
+        this.anoFabricacao = anoFabricacao;
+        this.anoModelo = anoModelo;
+        this.combustivel = combustivel;
+        this.quilometragem = quilometragem;
+        this.tipoVeiculo = tipoVeiculo;
+        this.situacao = situacao;
+        this.modelo = modelo;
+        this.categoria = categoria;
+    }
+
+    public Categoria getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(Categoria categoria) {
+        this.categoria = categoria;
+    }
+
+    public Modelo getModelo() {
+        return modelo;
+    }
+
+    public void setModelo(Modelo modelo) {
+        this.modelo = modelo;
+    }
 
     public int getId() {
         return id;
@@ -63,28 +79,28 @@ public class Veiculo {
         this.placa = placa;
     }
 
-    public int getRenavam() {
+    public String getRenavam() {
         return renavam;
     }
 
-    public void setRenavam(int renavam) {
+    public void setRenavam(String renavam) {
         this.renavam = renavam;
     }
 
-    public float getPrecoCompra() {
-        return precoCompra;
+    public float getPrecoDeCompra() {
+        return precoDeCompra;
     }
 
-    public void setPrecoCompra(float precoCompra) {
-        this.precoCompra = precoCompra;
+    public void setPrecoDeCompra(float precoDeCompra) {
+        this.precoDeCompra = precoDeCompra;
     }
 
-    public float getPrecoVenda() {
-        return precoVenda;
+    public float getPrecoDeVenda() {
+        return precoDeVenda;
     }
 
-    public void setPrecoVenda(float precoVenda) {
-        this.precoVenda = precoVenda;
+    public void setPrecoDeVenda(float precoDeVenda) {
+        this.precoDeVenda = precoDeVenda;
     }
 
     public int getAnoFabricacao() {
@@ -103,11 +119,11 @@ public class Veiculo {
         this.anoModelo = anoModelo;
     }
 
-    public Object getCombustivel() {
+    public TipoDeCombustivel getCombustivel() {
         return combustivel;
     }
 
-    public void setCombustivel(Object combustivel) {
+    public void setCombustivel(TipoDeCombustivel combustivel) {
         this.combustivel = combustivel;
     }
 
@@ -119,15 +135,25 @@ public class Veiculo {
         this.quilometragem = quilometragem;
     }
 
-    public Object getTipodoVeiculo() {
-        return tipodoVeiculo;
+    public TipoDoVeiculo getTipoVeiculo() {
+        return tipoVeiculo;
     }
 
-    public void setTipodoVeiculo(Object tipodoVeiculo) {
-        this.tipodoVeiculo = tipodoVeiculo;
+    public void setTipoVeiculo(TipoDoVeiculo tipoVeiculo) {
+        this.tipoVeiculo = tipoVeiculo;
     }
-    
-   
-  
-    
+
+    public SituacaoDoVeiculo getSituacao() {
+        return situacao;
+    }
+
+    public void setSituacao(SituacaoDoVeiculo situacao) {
+        this.situacao = situacao;
+    }
+
+    @Override
+    public String toString() {
+        return id + ";"+ placa + ";"+ renavam + ";"+ precoDeCompra + ";"+ precoDeVenda + ";"+ anoFabricacao + ";"+ anoModelo + ";"+ combustivel + ";"+ quilometragem + ";"+ tipoVeiculo + ";"+ situacao + ";"+ modelo.getId() + ";"+ categoria.getId();
+    }
+
 }

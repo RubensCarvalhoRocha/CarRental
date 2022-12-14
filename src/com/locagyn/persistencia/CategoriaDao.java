@@ -74,7 +74,7 @@ public CategoriaDao() {
                 String vetorString[] = linha.split(";");
                 objetoCategoria.setId(Integer.parseInt(vetorString[0]));
                 objetoCategoria.setDescricao(vetorString[1]);
-                objetoCategoria.setValor(vetorString[2]);
+                objetoCategoria.setValor(Float.parseFloat(vetorString[2]));
                 listaDeMarcas.add(objetoCategoria);
             }
             br.close();
@@ -82,6 +82,25 @@ public CategoriaDao() {
         } catch (Exception erro) {
             throw erro;
         }
+    }
+
+    @Override
+    public Categoria buscar(int id) throws Exception {
+         FileReader fr = new FileReader(nomeDoArquivoNoDisco);
+        BufferedReader br = new BufferedReader(fr);
+        String linha = "";
+        while ((linha = br.readLine()) != null) {
+            Categoria objetoAcessorios = new Categoria();
+            String vetorString[] = linha.split(";");
+            objetoAcessorios.setId(Integer.parseInt(vetorString[0]));
+            objetoAcessorios.setDescricao(vetorString[1]);
+            objetoAcessorios.setValor(Float.parseFloat(vetorString[2]));
+            if (objetoAcessorios.getId() == id) {
+                br.close();
+                return new Categoria((Integer.parseInt(vetorString[0])), vetorString[1], (Float.parseFloat(vetorString[2])));
+            }
+        }
+        return null;
     }
     
 }

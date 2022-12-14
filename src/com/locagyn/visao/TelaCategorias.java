@@ -275,7 +275,7 @@ private void imprimirDadosNaGrid(ArrayList<Categoria> listaDeCategoria) {
                 Categoria aux = lista.next();
                 saida[0] = aux.getId() + "";
                 saida[1] = aux.getDescricao();
-                saida[2] = aux.getValor();
+                saida[2] = aux.getValor()+"";
                 //Incluir nova linha na Tabela
                 model.addRow(saida);
             }
@@ -322,7 +322,7 @@ private void imprimirDadosNaGrid(ArrayList<Categoria> listaDeCategoria) {
         try {
 
             ICategoriaControle incluirMarca = new CategoriaControle();
-            Categoria objeto = new Categoria(Integer.parseInt(jTextFieldIdentificador.getText()), jTextFieldDescricao.getText(), jTextFieldValor.getText());
+            Categoria objeto = new Categoria(Integer.parseInt(jTextFieldIdentificador.getText()), jTextFieldDescricao.getText(),Float.parseFloat(jTextFieldValor.getText()));
             categoriaControle.alterar(objeto);
             imprimirDadosNaGrid(incluirMarca.listagem());
         } catch (Exception ex) {
@@ -337,7 +337,7 @@ private void imprimirDadosNaGrid(ArrayList<Categoria> listaDeCategoria) {
 
            ICategoriaControle incluirCategoria = new CategoriaControle(); 
 
-            Categoria objeto = new Categoria(0, jTextFieldDescricao.getText(), jTextFieldValor.getText());
+            Categoria objeto = new Categoria(0, jTextFieldDescricao.getText(), Float.parseFloat(jTextFieldValor.getText()));
             categoriaControle.incluir(objeto);
             jTextFieldDescricao.setText("");
             jTextFieldValor.setText("");

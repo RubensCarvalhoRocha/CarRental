@@ -46,7 +46,7 @@ public class CategoriaControle implements ICategoriaControle {
         if("".equals(descricao)){
             throw new Exception("Digite a Descrição");
         }
-        String valor = objeto.getValor();
+        float valor = objeto.getValor();
         if("".equals(valor)){
             throw new Exception("Digite o valor da locação");
         }
@@ -62,7 +62,7 @@ public class CategoriaControle implements ICategoriaControle {
         if("".equals(descricao)){
             throw new Exception("Digite a Descrição");
         }
-        String valor = objeto.getValor();
+        float valor = objeto.getValor();
         if("".equals(valor)){
             throw new Exception("Digite o valor da locação");
         }
@@ -72,6 +72,11 @@ public class CategoriaControle implements ICategoriaControle {
     @Override
     public ArrayList<Categoria> listagem() throws Exception {
         return categoriaPersistencia.listagem();
+    }
+
+    @Override
+    public Categoria buscar(int id) throws Exception {
+        return categoriaPersistencia.buscar(id);
     }
     
 }
