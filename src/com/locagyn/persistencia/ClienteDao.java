@@ -30,8 +30,8 @@ public class ClienteDao implements IClienteDao {
     Cliente objetoCliente = new Cliente();
 
     public ClienteDao() {
-        nomeDoArquivoNoDiscoPF = "./src/com/locagyn/arquivosdedados/ClientePF.txt";
-        nomeDoArquivoNoDiscoPJ = "./src/com/locagyn/arquivosdedados/ClientePJ.txt";
+        nomeDoArquivoNoDiscoPF = ".\\src\\com\\locagyn\\arquivodedados\\ClientePF.txt";
+        nomeDoArquivoNoDiscoPJ = ".\\src\\com\\locagyn\\arquivodedados\\ClientePJ.txt";
     }
 
     @Override
