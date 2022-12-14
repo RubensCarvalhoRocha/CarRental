@@ -27,7 +27,7 @@ public class MotoristaDao implements IMotoristaDao {
     Cliente objetoCliente = new Cliente();
     
     public MotoristaDao (){
-        nomeDoArquivoNoDiscoMotorista = "./src/com/BeeSoftware/arquivosdedados/Motorista.txt";
+        nomeDoArquivoNoDiscoMotorista = "";
     }
 
     @Override
@@ -81,13 +81,12 @@ try {
                 objetoMotorista.setId(Integer.parseInt(vetorString[0]));
                 objetoMotorista.setNome(vetorString[1].replaceAll("_", " "));
                 objetoMotorista.setCnh(vetorString[2]);
-                // PEGAR TELEFONE
                 long ddi = Long.parseLong(vetorString[3]);
                 long ddd = Long.parseLong(vetorString[4]);
                 long numero = Long.parseLong(vetorString[5]);
                 Telefone telefone = new Telefone(ddi, ddd, numero);
                 objetoMotorista.setTelefone(telefone);
-                // PEGAR ENDEREÇO
+                
                 String longradouro = vetorString[6];
                 String complemento = vetorString[7];
                 String bairro = vetorString[8];
@@ -118,13 +117,11 @@ FileReader fr = new FileReader(nomeDoArquivoNoDiscoMotorista);
                 objetoMotorista.setId(Integer.parseInt(vetorString[0]));
                 objetoMotorista.setNome(vetorString[1].replaceAll("_", " "));
                 objetoMotorista.setCnh(vetorString[2]);
-                // PEGAR TELEFONE
                 long ddi = Long.parseLong(vetorString[3]);
                 long ddd = Long.parseLong(vetorString[4]);
                 long numero = Long.parseLong(vetorString[5]);
                 Telefone telefone = new Telefone(ddi, ddd, numero);
                 objetoMotorista.setTelefone(telefone);
-                // PEGAR ENDEREÇO
                 String longradouro = vetorString[6];
                 String complemento = vetorString[7];
                 String bairro = vetorString[8];

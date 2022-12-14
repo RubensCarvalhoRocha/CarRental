@@ -303,7 +303,7 @@ public class TelaAcessorios extends javax.swing.JFrame {
             Iterator<Acessorios> lista = listaDeAcessorios.iterator();
 
             while (lista.hasNext()) {
-                String[] saida = new String[3];
+                String[] saida = new String[4];
                 Acessorios aux = lista.next();
                 saida[0] = aux.getId() + "";
                 saida[1] = aux.getDescricao();

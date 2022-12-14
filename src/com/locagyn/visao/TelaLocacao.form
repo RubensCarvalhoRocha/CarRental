@@ -134,9 +134,9 @@
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                          <Component id="jTextFieldID" alignment="0" pref="148" max="32767" attributes="0"/>
-                          <Component id="jFormattedTextFieldDataInicio" max="32767" attributes="0"/>
+                          <Component id="jFormattedTextFieldDataInicio" pref="148" max="32767" attributes="0"/>
                           <Component id="jFormattedTextFieldDataInicio1" alignment="0" max="32767" attributes="0"/>
+                          <Component id="jTextFieldID" alignment="0" min="-2" pref="100" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="81" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
@@ -151,7 +151,7 @@
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                   <Component id="jTextFieldValorLocacao" alignment="0" pref="159" max="32767" attributes="0"/>
                                   <Component id="jComboBoxSituacao" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="jComboBoxCategoria" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jComboBoxCategoria" alignment="0" max="32767" attributes="0"/>
                               </Group>
                               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                           </Group>

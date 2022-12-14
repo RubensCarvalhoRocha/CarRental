@@ -5,6 +5,7 @@
 package com.locagyn.controle;
 
 import com.locagyn.modelos.Motorista;
+import com.locagyn.persistencia.IMotoristaDao;
 import com.locagyn.persistencia.MotoristaDao;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -14,10 +15,10 @@ import java.util.Iterator;
  * @author arthu
  */
 public class MotoristaControle implements IMotoristaControle{
-IMotoristaControle motoristaPersistencia=null;
+IMotoristaDao motoristaPersistencia=null;
     
     public MotoristaControle(){
-        this.motoristaPersistencia = (IMotoristaControle) new MotoristaDao();
+        this.motoristaPersistencia = new MotoristaDao();
     }
     @Override
     public void incluir(Motorista objeto) throws Exception {
@@ -30,8 +31,8 @@ IMotoristaControle motoristaPersistencia=null;
     }
 
     @Override
-    public void buscar(Motorista objeto) throws Exception {
-        motoristaPersistencia.buscar(objeto);
+    public void buscar(int id) throws Exception {
+        motoristaPersistencia.buscar(id);
     }
 
     @Override
