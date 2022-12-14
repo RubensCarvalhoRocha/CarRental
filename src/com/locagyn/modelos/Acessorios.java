@@ -14,12 +14,12 @@ public class Acessorios {
     //Atributos
     private int id = 0;
     private String descricao = "";
-    private String valor = "";
+    private float valor = 0;
     private SituacaoAcessorio situacaoAcessorio;
     //Metodos
     public Acessorios(){
     }
-    public Acessorios(int id, String descricao, String valor,SituacaoAcessorio situacaoAcessorio){
+    public Acessorios(int id, String descricao, float valor,SituacaoAcessorio situacaoAcessorio){
         this.id = id;
         this.descricao = descricao;
         this.valor = valor;
@@ -37,11 +37,11 @@ public class Acessorios {
     public void setDescricao(String descricao) {
         this.descricao = descricao;
     }
-    public String getValor() {
+    public float getValor() {
         return valor;
     }
-    public void setValor(String url) {
-        this.valor= url;
+    public void setValor(float valor) {
+        this.valor= valor;
     }
 
     public SituacaoAcessorio getSituacaoAcessorio() {

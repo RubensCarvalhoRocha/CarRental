@@ -8,6 +8,7 @@ import com.locagyn.Enumarations.SituacaoDaLocacao;
 import com.locagyn.Enumarations.TipoDeCombustivel;
 import com.locagyn.LimitarCaracteres.LimitaCaracteres;
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -366,14 +367,7 @@ public class TelaLocacao extends javax.swing.JFrame {
     private void jTableLocacaoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTableLocacaoMouseClicked
         // TODO add your handling code here:
         try {
-            this.jTextFieldID.setText(jTableLocacao.getValueAt(jTableLocacao.getSelectedRow(), 0).toString());
-            this.jTextFieldDataInicio.setText(jTableLocacao.getValueAt(jTableLocacao.getSelectedRow(), 1).toString());
-            this.jTextFieldEndereco.setText(jTableLocacao.getValueAt(jTableLocacao.getSelectedRow(), 2).toString());
-            String nomeArquivo = (String) this.jTableLocacao.getValueAt(jTableLocacao.getSelectedRow(), 2);
-            jTextFieldEndereco.setText(nomeArquivo);
-            ImageIcon iconLogo = new ImageIcon(nomeArquivo);
-            iconLogo.setImage(iconLogo.getImage().getScaledInstance(jLabelLogo.getWidth(), jLabelLogo.getHeight(), 1));
-            jLabelLogo.setIcon(iconLogo);
+          
         } catch (Exception e) {
             JOptionPane.showMessageDialog(this, e);
         }
@@ -397,21 +391,7 @@ public class TelaLocacao extends javax.swing.JFrame {
     private void jButtonLocarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonLocarActionPerformed
         // TODO add your handling code here:
         try {
-            JFileChooser fc = new JFileChooser();
-            File logo = new File("./src/com/locagyn/logos");
-            fc.setCurrentDirectory(logo);
-            fc.setFileSelectionMode(JFileChooser.FILES_ONLY);
-            fc.showOpenDialog(this);
-            File arquivo = fc.getSelectedFile();
-            String nomeDoArquivo = arquivo.getPath();
-            String nome = arquivo.getName();
-            String url = logo.getPath();
-            url += "/" + nome;
-            System.out.println(url);
-            jTextFieldEndereco.setText(url);
-            ImageIcon iconLogo = new ImageIcon(nomeDoArquivo);
-            iconLogo.setImage(iconLogo.getImage().getScaledInstance(jLabelLogo.getWidth(), jLabelLogo.getHeight(), 1));
-            jLabelLogo.setIcon(iconLogo);
+            
 
         } catch (Exception erro) {
             JOptionPane.showMessageDialog(this, "Selecione a Imagem");
@@ -422,12 +402,6 @@ public class TelaLocacao extends javax.swing.JFrame {
         // TODO add your handling code here:
         try {
 
-            IMarcaControle incluirMarca = new MarcaControle(); // pog
-
-            Marca objeto = new Marca(0, jTextFieldDataInicio.getText(), jTextFieldEndereco.getText());
-            marcaControle.incluir(objeto);
-            jTextFieldDataInicio.setText("");
-            imprimirDadosNaGrid(incluirMarca.listagem());
 
         } catch (Exception erro) {
             JOptionPane.showMessageDialog(this, erro.getMessage());
@@ -439,14 +413,10 @@ public class TelaLocacao extends javax.swing.JFrame {
 
         try {
 
-            IMarcaControle incluirMarca = new MarcaControle(); // pog
-            Marca objeto = new Marca(Integer.parseInt(jTextFieldID.getText()), jTextFieldDataInicio.getText(), jTextFieldEndereco.getText());
-            marcaControle.alterar(objeto);
-            imprimirDadosNaGrid(incluirMarca.listagem());
+           
         } catch (Exception ex) {
 
         }
-        jTextFieldDataInicio.setText("");
     }//GEN-LAST:event_jButtonCancelarActionPerformed
 
     private void jFormattedTextFieldDataInicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFormattedTextFieldDataInicioActionPerformed

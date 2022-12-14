@@ -12,8 +12,13 @@ import java.util.ArrayList;
  * @author arthu
  */
 public interface IAcessoriosDao {
-    void incluir(Acessorios objeto)throws Exception;
-    void alterar(Acessorios objeto)throws Exception;
-    ArrayList<Acessorios> listagem()throws Exception;
-    
+
+    void incluir(Acessorios objeto) throws Exception;
+
+    void alterar(Acessorios objeto) throws Exception;
+
+    ArrayList<Acessorios> listagem() throws Exception;
+
+    Acessorios buscar(int id) throws Exception;
+
 }

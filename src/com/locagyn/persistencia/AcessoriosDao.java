@@ -5,6 +5,7 @@
 package com.locagyn.persistencia;
 
 import com.locagyn.Enumarations.SituacaoAcessorio;
+import com.locagyn.Enumarations.SituacaoDoVeiculo;
 import com.locagyn.ID.GeradorIdentificador;
 import com.locagyn.modelos.Acessorios;
 import java.io.BufferedReader;
@@ -18,8 +19,9 @@ import java.util.Iterator;
  *
  * @author arthu
  */
-public class AcessoriosDao implements IAcessoriosDao{
- private String nomeDoArquivoNoDisco;
+public class AcessoriosDao implements IAcessoriosDao {
+
+    private String nomeDoArquivoNoDisco;
 
     public AcessoriosDao() {
         nomeDoArquivoNoDisco = "./src/com/locagyn/arquivodedados/Acessorios.txt";
@@ -27,8 +29,8 @@ public class AcessoriosDao implements IAcessoriosDao{
 
     @Override
     public void incluir(Acessorios objeto) throws Exception {
-          try {  
-                        
+        try {
+
             //cria o arquivo
             FileWriter fw = new FileWriter(nomeDoArquivoNoDisco, true);
             //Criar o buffer do arquivo
@@ -46,7 +48,7 @@ public class AcessoriosDao implements IAcessoriosDao{
 
     @Override
     public void alterar(Acessorios objeto) throws Exception {
-          try {
+        try {
             Iterator<Acessorios> lista = listagem().iterator();
             FileWriter fw = new FileWriter(nomeDoArquivoNoDisco);
             BufferedWriter bw = new BufferedWriter(fw);
@@ -67,7 +69,7 @@ public class AcessoriosDao implements IAcessoriosDao{
 
     @Override
     public ArrayList<Acessorios> listagem() throws Exception {
-         try {
+        try {
             ArrayList<Acessorios> listaDeMarcas = new ArrayList<Acessorios>();
             FileReader fr = new FileReader(nomeDoArquivoNoDisco);
             BufferedReader br = new BufferedReader(fr);
@@ -77,7 +79,7 @@ public class AcessoriosDao implements IAcessoriosDao{
                 String vetorString[] = linha.split(";");
                 objetoAcessorios.setId(Integer.parseInt(vetorString[0]));
                 objetoAcessorios.setDescricao(vetorString[1]);
-                objetoAcessorios.setValor(vetorString[2]);
+                objetoAcessorios.setValor(Float.parseFloat(vetorString[2]));
                 objetoAcessorios.setSituacaoAcessorio(SituacaoAcessorio.valueOf(vetorString[3]));
                 listaDeMarcas.add(objetoAcessorios);
             }
@@ -87,5 +89,24 @@ public class AcessoriosDao implements IAcessoriosDao{
             throw erro;
         }
     }
-    
+
+    @Override
+    public Acessorios buscar(int id) throws Exception {
+        FileReader fr = new FileReader(nomeDoArquivoNoDisco);
+        BufferedReader br = new BufferedReader(fr);
+        String linha = "";
+        while ((linha = br.readLine()) != null) {
+            Acessorios objetoAcessorios = new Acessorios();
+            String vetorString[] = linha.split(";");
+            objetoAcessorios.setId(Integer.parseInt(vetorString[0]));
+            objetoAcessorios.setDescricao(vetorString[1]);
+            objetoAcessorios.setValor(Float.parseFloat(vetorString[2]));
+            if (objetoAcessorios.getId() == id) {
+                br.close();
+                return new Acessorios((Integer.parseInt(vetorString[0])), vetorString[1], (Float.parseFloat(vetorString[2])), SituacaoAcessorio.valueOf(vetorString[3]));
+            }
+        }
+        return null;
+    }
+
 }

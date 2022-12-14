@@ -5,6 +5,7 @@
 package com.locagyn.visao;
 
 import com.locagyn.LimitarCaracteres.LimitaCaracteres;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -287,12 +288,13 @@ public class TelaMotorista extends javax.swing.JFrame {
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextFieldID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabelNome)
-                    .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(jLabelRg2)
-                        .addComponent(jTextFieldBairro, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jTextFieldBairro, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jTextFieldID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabelNome)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel5Layout.createSequentialGroup()
@@ -461,21 +463,7 @@ public class TelaMotorista extends javax.swing.JFrame {
     private void jButtonBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBuscarActionPerformed
         // TODO add your handling code here:
         try {
-            JFileChooser fc = new JFileChooser();
-            File logo = new File("./src/com/locagyn/logos");
-            fc.setCurrentDirectory(logo);
-            fc.setFileSelectionMode(JFileChooser.FILES_ONLY);
-            fc.showOpenDialog(this);
-            File arquivo = fc.getSelectedFile();
-            String nomeDoArquivo = arquivo.getPath();
-            String nome = arquivo.getName();
-            String url = logo.getPath();
-            url += "/" + nome;
-            System.out.println(url);
-            jTextFieldComplemento.setText(url);
-            ImageIcon iconLogo = new ImageIcon(nomeDoArquivo);
-            iconLogo.setImage(iconLogo.getImage().getScaledInstance(jLabelLogo.getWidth(), jLabelLogo.getHeight(), 1));
-            jLabelLogo.setIcon(iconLogo);
+           
 
         } catch (Exception erro) {
             JOptionPane.showMessageDialog(this, "Selecione a Imagem");
@@ -486,12 +474,7 @@ public class TelaMotorista extends javax.swing.JFrame {
         // TODO add your handling code here:
         try {
 
-            IMarcaControle incluirMarca = new MarcaControle(); // pog
-
-            Marca objeto = new Marca(0, jTextFieldNome.getText(), jTextFieldComplemento.getText());
-            marcaControle.incluir(objeto);
-            jTextFieldNome.setText("");
-            imprimirDadosNaGrid(incluirMarca.listagem());
+          
 
         } catch (Exception erro) {
             JOptionPane.showMessageDialog(this, erro.getMessage());
@@ -503,10 +486,6 @@ public class TelaMotorista extends javax.swing.JFrame {
 
         try {
 
-            IMarcaControle incluirMarca = new MarcaControle(); // pog
-            Marca objeto = new Marca(Integer.parseInt(jTextFieldID.getText()), jTextFieldNome.getText(), jTextFieldComplemento.getText());
-            marcaControle.alterar(objeto);
-            imprimirDadosNaGrid(incluirMarca.listagem());
         } catch (Exception ex) {
 
         }
@@ -516,14 +495,7 @@ public class TelaMotorista extends javax.swing.JFrame {
     private void jTableMotoristaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTableMotoristaMouseClicked
         // TODO add your handling code here:
         try {
-            this.jTextFieldID.setText(jTableMotorista.getValueAt(jTableMotorista.getSelectedRow(), 0).toString());
-            this.jTextFieldNome.setText(jTableMotorista.getValueAt(jTableMotorista.getSelectedRow(), 1).toString());
-            this.jTextFieldComplemento.setText(jTableMotorista.getValueAt(jTableMotorista.getSelectedRow(), 2).toString());
-            String nomeArquivo = (String) this.jTableMotorista.getValueAt(jTableMotorista.getSelectedRow(), 2);
-            jTextFieldComplemento.setText(nomeArquivo);
-            ImageIcon iconLogo = new ImageIcon(nomeArquivo);
-            iconLogo.setImage(iconLogo.getImage().getScaledInstance(jLabelLogo.getWidth(), jLabelLogo.getHeight(), 1));
-            jLabelLogo.setIcon(iconLogo);
+           
         } catch (Exception e) {
             JOptionPane.showMessageDialog(this, e);
         }

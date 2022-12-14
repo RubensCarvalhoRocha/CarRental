@@ -307,7 +307,7 @@ public class TelaAcessorios extends javax.swing.JFrame {
                 Acessorios aux = lista.next();
                 saida[0] = aux.getId() + "";
                 saida[1] = aux.getDescricao();
-                saida[2] = aux.getValor();
+                saida[2] = aux.getValor()+"";
                 saida[3] = aux.getSituacaoAcessorio().toString();
                 //Incluir nova linha na Tabela
                 model.addRow(saida);
@@ -324,11 +324,11 @@ public class TelaAcessorios extends javax.swing.JFrame {
 
             IAcessoriosControle incluirAcessorios = new AcessoriosControle(); 
 
-            Acessorios objeto = new Acessorios(0, jTextFieldDescricao.getText(), jTextFieldValorDaLocacao.getText(),SituacaoAcessorio.valueOf(jComboBoxSituacaoAcessorio.getSelectedItem().toString()));
-            acessoriosControle.incluir(objeto);
+            Acessorios objeto = new Acessorios(0, jTextFieldDescricao.getText(),Float.parseFloat(jTextFieldValorDaLocacao.getText()),SituacaoAcessorio.valueOf(jComboBoxSituacaoAcessorio.getSelectedItem().toString()));
+           incluirAcessorios.incluir(objeto);
+            imprimirDadosNaGrid(incluirAcessorios.listagem());
             jTextFieldDescricao.setText("");
             jTextFieldValorDaLocacao.setText("");
-            imprimirDadosNaGrid(incluirAcessorios.listagem());
 
         } catch (Exception erro) {
             JOptionPane.showMessageDialog(this, erro.getMessage());
@@ -341,7 +341,7 @@ public class TelaAcessorios extends javax.swing.JFrame {
         try {
 
             IAcessoriosControle incluirMarca = new AcessoriosControle();
-            Acessorios objeto = new Acessorios(Integer.parseInt(jTextFieldIdentificador.getText()), jTextFieldDescricao.getText(), jTextFieldValorDaLocacao.getText(),SituacaoAcessorio.valueOf(jComboBoxSituacaoAcessorio.getSelectedItem().toString()));
+            Acessorios objeto = new Acessorios(Integer.parseInt(jTextFieldIdentificador.getText()), jTextFieldDescricao.getText(), Float.parseFloat(jTextFieldValorDaLocacao.getText()),SituacaoAcessorio.valueOf(jComboBoxSituacaoAcessorio.getSelectedItem().toString()));
             acessoriosControle.alterar(objeto);
             jTextFieldDescricao.setText("");
             jTextFieldValorDaLocacao.setText("");

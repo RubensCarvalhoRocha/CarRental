@@ -47,7 +47,7 @@ public class AcessoriosControle implements IAcessoriosControle{
         if("".equals(descricao)){
             throw new Exception("Digite a Descrição");
         }
-        String valor = objeto.getValor();
+        float valor = objeto.getValor();
         if("".equals(valor)){
             throw new Exception("Digite o valor da locação");
         }
@@ -63,7 +63,7 @@ public class AcessoriosControle implements IAcessoriosControle{
         if("".equals(descricao)){
             throw new Exception("Digite a Descrição");
         }
-        String valor = objeto.getValor();
+        float valor = objeto.getValor();
         if("".equals(valor)){
             throw new Exception("Digite o valor da locação");
         }
