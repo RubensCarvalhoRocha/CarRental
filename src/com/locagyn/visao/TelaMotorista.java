@@ -524,7 +524,7 @@ public void imprimirTabela(ArrayList<Motorista> listaDeVeiculos) {
             tabela.setNumRows(0);
             Iterator<Motorista> lista = listaDeVeiculos.iterator();
             while (lista.hasNext()) {
-                String[] tab = new String[13];
+                String[] tab = new String[9];
                 Motorista aux = lista.next();
                 tab[0] = aux.getId() + "";
                 tab[1] = aux.getNome();
@@ -533,7 +533,7 @@ public void imprimirTabela(ArrayList<Motorista> listaDeVeiculos) {
                 tab[4] = aux.getUrl()+ "";
                 tab[5] = aux.getCnh()+ "";
                 tab[6] = aux.getDataVencimentoCNH()+ "";
-                tab[7] = aux.getCliente().toString();
+                tab[7] = aux.getCliente()+"";
                 tab[8] = aux.getTipoCNH()+ "";
                 
 

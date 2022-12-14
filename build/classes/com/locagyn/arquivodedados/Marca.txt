@@ -1,5 +1,0 @@
-1;CHEVROLET;.\src\com\locagyn\logos/chevrolet.png
-2;FIAT;.\src\com\locagyn\logos/fiat-202766.png
-3;TOYOTA;.\src\com\locagyn\logos/toyota-202914.png
-11;NISSAN;.\src\com\locagyn\logos/nissan-202859.png
-40;KIA;.\src\com\locagyn\logos/kia-202823.png

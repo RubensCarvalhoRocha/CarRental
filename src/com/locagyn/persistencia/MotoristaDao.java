@@ -27,7 +27,7 @@ public class MotoristaDao implements IMotoristaDao {
     Cliente objetoCliente = new Cliente();
     
     public MotoristaDao (){
-        nomeDoArquivoNoDiscoMotorista = "";
+        nomeDoArquivoNoDiscoMotorista = ".\\src\\com\\locagyn\\arquivodedados\\Motorista.txt";
     }
 
     @Override

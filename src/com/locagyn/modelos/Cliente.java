@@ -130,21 +130,10 @@ public class Cliente {
     public String toString(TipoDeCliente tipoDoCliente) {
 
         if (tipoDoCliente.equals(TipoDeCliente.PESSOA_FISICA)) {
-            return id + ";"
-                    + cpf + ";"
-                    + nome + ";"
-                    + identidade + ";"
-                    + telefone.toString() + ";"
-                    + email + ";"
-                    + endereco.toString();
+            return id + ";"+ cpf + ";"+ nome + ";"+ identidade + ";"+ telefone.toString() + ";"+ email + ";"+ endereco.toString();
         }
         if (tipoDoCliente.equals(TipoDeCliente.PESSOA_JURIDICA)) {
-            return id + ";"
-                    + razaoSocial + ";"
-                    + cnpj + ";"
-                    + telefone.toString() + ";"
-                    + email + ";"
-                    + endereco.toString();
+            return id + ";" + razaoSocial + ";"+ cnpj + ";"+ telefone.toString() + ";"+ email + ";"+ endereco.toString();
         } else {
             return null;
         }

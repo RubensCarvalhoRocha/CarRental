@@ -1,5 +1,0 @@
-32;Intermediario;250.0
-36;Execultivo;500.0
-37;Economico;100.0
-38;suv;800.0
-39;utilitario;400.0

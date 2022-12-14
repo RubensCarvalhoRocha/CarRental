@@ -1,5 +1,0 @@
-4;MOBI;.\src\com\locagyn\modelosPng/mobi.png;1
-5;CIVIC;.\src\com\locagyn\modelosPng/corolla.png;3
-6;ETIOS;.\src\com\locagyn\modelosPng/etios.png;3
-12;ONIX;.\src\com\locagyn\modelosPng/onix.jpg;1
-41;CERATO;.\src\com\locagyn\modelosPng/Cerato.png;40

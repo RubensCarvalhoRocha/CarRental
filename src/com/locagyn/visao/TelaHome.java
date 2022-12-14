@@ -46,7 +46,7 @@ public class TelaHome extends javax.swing.JFrame {
                 jButtonVeiculoActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonVeiculo, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 540, 210, 40));
+        getContentPane().add(jButtonVeiculo, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 430, 210, 40));
 
         jButtonMotorista.setText("Cadastrar Motorista");
         jButtonMotorista.addActionListener(new java.awt.event.ActionListener() {
@@ -54,7 +54,7 @@ public class TelaHome extends javax.swing.JFrame {
                 jButtonMotoristaActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonMotorista, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 490, 210, 40));
+        getContentPane().add(jButtonMotorista, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 530, 210, 40));
 
         jButtonCategoria.setText("Cadastrar Categorias");
         jButtonCategoria.addActionListener(new java.awt.event.ActionListener() {
@@ -62,7 +62,7 @@ public class TelaHome extends javax.swing.JFrame {
                 jButtonCategoriaActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonCategoria, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 390, 210, 40));
+        getContentPane().add(jButtonCategoria, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 530, 210, 40));
 
         jButtonAcessorios.setText("Cadastrar Acessorios");
         jButtonAcessorios.addActionListener(new java.awt.event.ActionListener() {
@@ -70,7 +70,7 @@ public class TelaHome extends javax.swing.JFrame {
                 jButtonAcessoriosActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonAcessorios, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 440, 210, 40));
+        getContentPane().add(jButtonAcessorios, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 580, 210, 40));
 
         jButtonMarcas.setText("Cadrastrar Marcas");
         jButtonMarcas.setBorder(null);
@@ -79,7 +79,7 @@ public class TelaHome extends javax.swing.JFrame {
                 jButtonMarcasActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonMarcas, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 290, 210, 40));
+        getContentPane().add(jButtonMarcas, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 430, 210, 40));
 
         jButtonModelos.setText("Cadrastrar Modelos");
         jButtonModelos.addActionListener(new java.awt.event.ActionListener() {
@@ -87,7 +87,7 @@ public class TelaHome extends javax.swing.JFrame {
                 jButtonModelosActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonModelos, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 340, 210, 40));
+        getContentPane().add(jButtonModelos, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 480, 210, 40));
 
         jButtonCliente.setText("Cadastrar Cliente");
         jButtonCliente.addActionListener(new java.awt.event.ActionListener() {
@@ -95,7 +95,7 @@ public class TelaHome extends javax.swing.JFrame {
                 jButtonClienteActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 590, 210, 40));
+        getContentPane().add(jButtonCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 480, 210, 40));
 
         jButton1.setText("Locacao");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -103,7 +103,7 @@ public class TelaHome extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 640, 210, 40));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 580, 210, 40));
 
         jLabel2.setBackground(new java.awt.Color(0, 0, 0));
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/locagyn/gifseimagens/Post para instagram oportunidade venda de carros moderno vermelho (1).gif"))); // NOI18N
