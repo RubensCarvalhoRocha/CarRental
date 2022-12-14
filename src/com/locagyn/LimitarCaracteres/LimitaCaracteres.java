@@ -36,9 +36,9 @@ public class LimitaCaracteres extends PlainDocument{
         switch(tpEntrada){
             case NUMEROINTEIRO: regex = "[^0-9]"; break;
             case NUMERODECIMAL: regex = "[^0-9,.]"; break;
-            case NOME: regex = "[^\\p{IsLatin} ] "; break;
-            case EMAIL: regex = "[^\\p{IsLatin}@.\\-_ ] "; break;
-            case DATA: regex = "[^0-9/]" ; break;
+            case NOME:          regex = "[^\\p{IsLatin} ] "; break;
+            case EMAIL:         regex = "[^\\p{IsLatin}@.\\-_][^0-9]"; break;
+            case DATA:          regex = "[^0-9/]"; break;
                     }
         //FAZENDO A SUBSTITUIÇÃO
         string = string.replaceAll(regex, "");

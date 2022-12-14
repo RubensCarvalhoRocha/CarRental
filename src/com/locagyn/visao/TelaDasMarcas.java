@@ -31,7 +31,7 @@ public class TelaDasMarcas extends javax.swing.JFrame {
      */
     public TelaDasMarcas() {
         initComponents();
-        jTextFieldDescricao.setDocument(new LimitaCaracteres(10, LimitaCaracteres.TipoEntrada.NOME));
+        jTextFieldDescricao.setDocument(new LimitaCaracteres(15, LimitaCaracteres.TipoEntrada.NOME));
         MarcaControle txt = new MarcaControle(); // pog
         txt.ChecarTxt();
         GeradorIdentificador id = new GeradorIdentificador();
@@ -283,7 +283,7 @@ public class TelaDasMarcas extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 6, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -295,7 +295,7 @@ public class TelaDasMarcas extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(388, 388, 388)
                         .addComponent(jButtonHome, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(50, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

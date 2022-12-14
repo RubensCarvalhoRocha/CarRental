@@ -1,4 +1,5 @@
-4;GOLA1;.\src\com\locagyn\modelosPng/gol.png;2
-5;TESTE;.\src\com\locagyn\modelosPng/gol.png;2
-6;GOL;.\src\com\locagyn\modelosPng/gol.png;2
-12;DJJDDJJD;.\src\com\locagyn\modelosPng/kicks.png;2
+4;MOBI;.\src\com\locagyn\modelosPng/mobi.png;1
+5;CIVIC;.\src\com\locagyn\modelosPng/corolla.png;3
+6;ETIOS;.\src\com\locagyn\modelosPng/etios.png;3
+12;ONIX;.\src\com\locagyn\modelosPng/onix.jpg;1
+41;CERATO;.\src\com\locagyn\modelosPng/Cerato.png;40
